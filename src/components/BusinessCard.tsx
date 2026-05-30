@@ -16,10 +16,10 @@ export default function BusinessCard({ title, description, href, tag, image }: B
       <div className="border border-gray-200 dark:border-gray-800 p-8 h-full flex flex-col hover:border-foreground transition-all duration-300 relative overflow-hidden bg-white dark:bg-black">
         {image && (
           <div className="absolute inset-0 opacity-0 group-hover:opacity-10 dark:group-hover:opacity-20 transition-opacity duration-500 z-0">
-            <Image 
-              src={image} 
-              alt={title} 
-              fill 
+            <Image
+              src={image}
+              alt={title}
+              fill
               className="object-cover grayscale"
             />
           </div>
@@ -30,7 +30,7 @@ export default function BusinessCard({ title, description, href, tag, image }: B
           </div>
           <h3 className="text-2xl font-medium tracking-tight mb-4">{title}</h3>
           <p className="text-gray-500 mb-8 flex-grow">{description}</p>
-          
+
           <div className="flex items-center text-sm font-medium mt-auto group-hover:underline underline-offset-4">
             Discover {title}
             <ArrowRightIcon className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />

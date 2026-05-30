@@ -62,7 +62,7 @@ export default function Home() {
             Building the foundations for tomorrow.
           </h1>
           <p className="text-xl sm:text-2xl text-gray-500 font-light leading-relaxed mb-12">
-            The HappyBoy Group is a diversified portfolio of businesses operating across essential industries worldwide. 
+            The HappyBoy Group is a diversified portfolio of businesses operating across essential industries worldwide.
             From sustainable agriculture to premium real estate, we deliver excellence.
           </p>
         </div>
@@ -77,7 +77,7 @@ export default function Home() {
               <h2 className="text-2xl font-semibold tracking-tight mb-4">Our Portfolio</h2>
               <p className="text-gray-500">Explore our diverse range of operating companies driving growth globally.</p>
             </div>
-            
+
             {/* The Cards */}
             {businesses.map((business, idx) => (
               <div key={idx} className="border-r border-b border-gray-200 dark:border-gray-800 h-full">

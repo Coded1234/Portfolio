@@ -6,10 +6,10 @@ export default function Page() {
   return (
     <div className="flex flex-col w-full min-h-[80vh]">
       <div className="relative w-full h-[50vh] min-h-[400px]">
-        <Image 
-          src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2000&auto=format&fit=crop" 
-          alt="Happyboy Collection" 
-          fill 
+        <Image
+          src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2000&auto=format&fit=crop"
+          alt="Happyboy Collection"
+          fill
           className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
           priority
         />
@@ -29,13 +29,13 @@ export default function Page() {
             Back to Portfolio
           </Link>
         </div>
-        
+
         <div className="max-w-3xl">
           <p className="text-2xl text-gray-500 font-light leading-relaxed mb-12">
             Curated fashion and luxury goods emphasizing timeless style and modern elegance. At Happyboy Collection, we believe that style is a reflection of identity.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mt-16 pt-16 border-t border-gray-200 dark:border-gray-800">
           <div>
             <h3 className="text-2xl font-medium tracking-tight mb-4">Our Philosophy</h3>
