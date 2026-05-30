@@ -1,4 +1,5 @@
 import BusinessCard from "@/components/BusinessCard";
+import Image from "next/image";
 
 const businesses = [
   {
@@ -56,8 +57,24 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
-      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <div className="max-w-3xl">
+      <section className="relative overflow-hidden py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+          <div className="grid h-full w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 auto-rows-fr">
+            {businesses.map((business) => (
+              <div key={`hero-bg-${business.title}`} className="relative">
+                <Image
+                  src={business.image}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="absolute inset-0 bg-white/70 dark:bg-black/40" />
+        </div>
+        <div className="relative z-10 max-w-3xl">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tighter mb-8 leading-tight">
             Building the foundations for tomorrow.
           </h1>
