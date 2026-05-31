@@ -26,8 +26,8 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "HappyBoy Group",
-  description: "A premier diversified corporation covering collection, farming, real estate, electronics, automobile, oil & gas, and mining.",
+  title: "Happy Boy Company Limited",
+  description: "A premier diversified corporation based in Accra, Ghana — spanning fashion, agriculture, real estate, electronics, automobile, energy, and mining.",
 };
 
 export default function RootLayout({

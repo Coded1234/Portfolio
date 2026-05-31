@@ -27,7 +27,7 @@ export default function AboutPage() {
             A Legacy of Excellence & Innovation
           </h1>
           <p className="text-base sm:text-xl text-white/90 font-light max-w-2xl px-4 drop-shadow">
-            Discover the vision, mission, and leadership driving the HappyBoy Group forward globally.
+            Discover the vision, mission, and leadership driving the Happy Boy Group forward globally.
           </p>
         </div>
       </section>
@@ -72,18 +72,16 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-20">
 
-            {/* Owner Image */}
+            {/* Owner Image Placeholder (photo will be inserted later) */}
             <FadeIn delay={100} className="w-full lg:w-5/12 flex justify-center">
               <div className="relative group">
                 {/* Offset gold border decoration */}
                 <div className="absolute inset-0 border-2 border-[#B89D58] translate-x-4 translate-y-4 sm:translate-x-6 sm:translate-y-6 z-0 transition-transform duration-500 group-hover:translate-x-4 group-hover:translate-y-4"></div>
-                <div className="relative w-[18rem] h-[24rem] sm:w-96 sm:h-[32rem] overflow-hidden shadow-lg z-10 bg-white">
-                  <Image
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop"
-                    alt="Founder & CEO"
-                    fill
-                    className="object-cover grayscale hover:grayscale-0 hover:scale-105 transition-all duration-700"
-                  />
+                <div className="relative w-[18rem] h-[24rem] sm:w-96 sm:h-[32rem] overflow-hidden shadow-lg z-10 bg-gray-200 flex items-center justify-center">
+                  <div className="text-center px-4">
+                    <div className="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4" />
+                    <p className="text-sm text-gray-600">Founder photo coming soon</p>
+                  </div>
                 </div>
               </div>
             </FadeIn>
@@ -94,12 +92,12 @@ export default function AboutPage() {
                 Founder & Chairman
               </p>
               <h2 className="text-3xl sm:text-5xl font-playfair font-normal mb-6 sm:mb-8 text-gray-900 leading-tight">
-                Mr. HappyBoy
+                Mr. Happy Boy
               </h2>
 
               <div className="space-y-5 sm:space-y-6 text-gray-600 font-light text-base sm:text-lg leading-relaxed">
                 <p>
-                  As the founding visionary behind the HappyBoy Group, Mr. HappyBoy
+                  As the founding visionary behind the Happy Boy Group, Mr. Happy Boy
                   has dedicated his life to building a conglomerate born out of a desire
                   for uncompromising quality. Starting with a single venture, his
                   relentless drive and sharp business acumen have transformed the brand
@@ -119,12 +117,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              {/* Signature */}
-              <div className="mt-4 sm:mt-8 flex justify-end lg:justify-start w-full pr-0 lg:pr-0">
-                <p className="font-caveat text-4xl sm:text-5xl text-gray-800 -rotate-3 hover:scale-110 transition-transform cursor-default">
-                  HappyBoy
-                </p>
-              </div>
+              {/* Signature removed per request */}
             </FadeIn>
 
           </div>

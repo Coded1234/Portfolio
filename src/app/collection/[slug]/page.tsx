@@ -16,7 +16,7 @@ const categoryData = {
             name: "The Monarch Trench",
             desc: "A masterclass in tailoring. Crafted from double-faced cashmere, featuring our signature gold-accent buttons and a bespoke silk lining.",
             img: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=1200&auto=format&fit=crop",
-            price: "$2,450"
+            price: "GHS 2,450"
         },
         gallery: [
             "https://images.unsplash.com/photo-1512436990141-65c02dc39bc1?q=80&w=800&auto=format&fit=crop",
@@ -36,7 +36,7 @@ const categoryData = {
             name: "Aero-Runner 01",
             desc: "Italian calfskin meets aerodynamic design. A sneaker built for the avant-garde collector.",
             img: "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?q=80&w=1200&auto=format&fit=crop",
-            price: "$850"
+            price: "GHS 850"
         },
         gallery: [
             "https://images.unsplash.com/photo-1595950653106-6c9ebd614c3a?q=80&w=800&auto=format&fit=crop",
@@ -51,12 +51,12 @@ const categoryData = {
         title: "Luxury Timepieces",
         subtitle: "Precision engineering meets timeless elegance.",
         heroImg: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=80&w=2000&auto=format&fit=crop",
-        description: "The Happyboy Watch Collection stands at the intersection of haute horlogerie and contemporary design. Engineered with meticulous precision and powered by Swiss-made mechanical movements, our timepieces are encased in advanced materials like titanium, ceramic, and rose gold. A true collector's statement.",
+        description: "The Happy Boy Watch Collection stands at the intersection of haute horlogerie and contemporary design. Engineered with meticulous precision and powered by Swiss-made mechanical movements, our timepieces are encased in advanced materials like titanium, ceramic, and rose gold. A true collector's statement.",
         spotlight: {
             name: "The Chronograph Ref. 01",
             desc: "Housed in brushed titanium with a skeletonized dial revealing the intricate in-house automatic caliber within.",
             img: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=1200&auto=format&fit=crop",
-            price: "$14,000"
+            price: "GHS 14,000"
         },
         gallery: [
             "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?q=80&w=800&auto=format&fit=crop",
@@ -71,12 +71,12 @@ const categoryData = {
         title: "Fine Jewelry",
         subtitle: "Bespoke diamond and gold mastery.",
         heroImg: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=2000&auto=format&fit=crop",
-        description: "Our fine jewelry encapsulates the essence of the Happyboy legacy. Handcrafted by master jewelers, the collection features ethically sourced VVS diamonds set in 18k solid gold and platinum. From statement heavy chains to delicate iced-out pendants, these pieces are designed to be heirlooms spanning generations.",
+        description: "Our fine jewelry encapsulates the essence of the Happy Boy legacy. Handcrafted by master jewelers, the collection features ethically sourced VVS diamonds set in 18k solid gold and platinum. From statement heavy chains to delicate iced-out pendants, these pieces are designed to be heirlooms spanning generations.",
         spotlight: {
             name: "Eternity Diamond Chain",
             desc: "18k solid yellow gold set with 45 carats of VVS diamonds, meticulously hand-placed in Milan.",
             img: "https://images.unsplash.com/photo-1599643478524-fb66f7f32997?q=80&w=1200&auto=format&fit=crop",
-            price: "$28,500"
+            price: "GHS 28,500"
         },
         gallery: [
             "https://images.unsplash.com/photo-1599643477874-dc81cbd21966?q=80&w=800&auto=format&fit=crop",
@@ -101,13 +101,14 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
     return (
         <div className="flex flex-col w-full min-h-screen bg-white text-gray-900 pb-32">
             {/* Category Hero */}
-            <div className="relative w-full h-[70vh] min-h-[500px] overflow-hidden group">
+            <div className="relative w-full h-[60vh] sm:h-[70vh] min-h-[320px] sm:min-h-[500px] overflow-hidden group">
                 <Image
                     src={data.heroImg}
                     alt={data.title}
                     fill
                     className="object-cover scale-105 duration-[20000ms] ease-out group-hover:scale-125"
                     priority
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 1200px"
                 />
                 {/* Film grain overlay */}
                 <div className="absolute inset-0 bg-noise z-0 mix-blend-overlay opacity-20 pointer-events-none"></div>
@@ -154,12 +155,14 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
             {/* Signature Spotlight Piece */}
             <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full mb-32">
                 <div className="flex flex-col lg:flex-row items-center relative">
-                    <FadeIn delay={200} className="relative w-full lg:w-1/2 h-[500px] lg:h-[700px] z-0">
+                    <FadeIn delay={200} className="relative w-full lg:w-1/2 h-[320px] md:h-[500px] lg:h-[700px] z-0">
                         <Image
                             src={data.spotlight.img}
                             fill
                             className="object-cover"
                             alt={data.spotlight.name}
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 800px"
+                            loading="lazy"
                         />
                         {/* Subtle luxury border overlay */}
                         <div className="absolute inset-4 border border-white/50 pointer-events-none mix-blend-overlay"></div>

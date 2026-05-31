@@ -8,7 +8,7 @@ import { PhoneInput } from "react-international-phone";
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [phone, setPhone] = useState("+1");
+  const [phone, setPhone] = useState("+233");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,12 +43,12 @@ export default function ContactPage() {
             Get In Touch
           </h1>
           <p className="text-base sm:text-2xl text-white/90 font-light mb-8 sm:mb-10 drop-shadow max-w-2xl px-2">
-            Let us help you connect with the HappyBoy Group.
+            Let us help you connect with Happy Boy Company Limited.
           </p>
 
           <div className="inline-flex items-center space-x-3 px-5 sm:px-8 py-3.5 sm:py-4 border border-white/60 text-white text-[12px] sm:text-[13px] font-semibold tracking-wider uppercase hover:bg-white hover:text-gray-900 transition-colors cursor-pointer backdrop-blur-sm max-w-[90vw]">
             <MapPinIcon className="w-4 h-4" />
-            <span>Global City, Business District</span>
+            <span>Accra, Ghana</span>
           </div>
         </div>
       </section>
@@ -74,7 +74,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="text-[10px] font-bold text-gray-400 tracking-wider uppercase mb-1">Email</p>
-                <p className="text-sm font-medium text-gray-900">contact@happyboy.com</p>
+                <p className="text-sm font-medium text-gray-900">nicksonmanasseh2@gmail.com</p>
               </div>
             </div>
 
@@ -84,7 +84,10 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="text-[10px] font-bold text-gray-400 tracking-wider uppercase mb-1">Phone</p>
-                <p className="text-sm font-medium text-gray-900">+1 555 000 0000</p>
+                <div className="text-sm font-medium text-gray-900 space-y-1">
+                  <div>0543770645</div>
+                  <div>0245911215</div>
+                </div>
               </div>
             </div>
 
@@ -95,9 +98,7 @@ export default function ContactPage() {
               <div>
                 <p className="text-[10px] font-bold text-gray-400 tracking-wider uppercase mb-1">Address</p>
                 <p className="text-sm font-medium text-gray-900 leading-relaxed">
-                  100 HappyBoy Avenue,<br />
-                  Business District,<br />
-                  Global City, 10001
+                  Accra, Ghana
                 </p>
               </div>
             </div>
@@ -114,13 +115,33 @@ export default function ContactPage() {
             </div>
 
             <div className="bg-gray-50 p-6 sm:p-8 rounded-sm border border-gray-100 mt-2">
-              <h4 className="text-lg sm:text-xl font-playfair mb-5 sm:mb-6 text-gray-900">Why Choose HappyBoy?</h4>
+              <h4 className="text-lg sm:text-xl font-playfair mb-5 sm:mb-6 text-gray-900">Why Choose Happy Boy?</h4>
               <ul className="space-y-3 sm:space-y-4 text-[11px] sm:text-xs text-gray-600 font-medium tracking-wide">
                 <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#B89D58] mr-4"></div> Premium portfolio worldwide</li>
                 <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#B89D58] mr-4"></div> Expert market knowledge</li>
                 <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#B89D58] mr-4"></div> Personalized client service</li>
                 <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#B89D58] mr-4"></div> Quick response within 24 hours</li>
               </ul>
+              <div className="mt-4 pt-4 border-t border-gray-100">
+                <h5 className="text-xs font-semibold text-gray-500 uppercase mb-2">Follow Us</h5>
+                <div className="flex items-center gap-4">
+                  <a href="https://instagram.com/kofisthappyboy" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm text-gray-700 hover:text-gray-900">
+                    <svg className="w-4 h-4 text-[#B89D58]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
+                      <circle cx="12" cy="12" r="3"></circle>
+                      <circle cx="17.5" cy="6.5" r="0.5"></circle>
+                    </svg>
+                    <span>@kofisthappyboy</span>
+                  </a>
+                  <a href="https://www.tiktok.com/@kofisthappyboy" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm text-gray-700 hover:text-gray-900">
+                    <svg className="w-4 h-4 text-[#B89D58]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <path d="M9 18V5l12-2v13" />
+                      <path d="M9 9c0 1.657 1.343 3 3 3s3-1.343 3-3" />
+                    </svg>
+                    <span>@kofisthappyboy</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -131,7 +152,7 @@ export default function ContactPage() {
                 <CheckCircle2Icon className="w-16 h-16 text-[#B89D58] mb-6" strokeWidth={1.5} />
                 <h3 className="text-2xl sm:text-3xl font-playfair text-gray-900 mb-4">Thank You</h3>
                 <p className="text-gray-500 font-light leading-relaxed max-w-sm text-sm sm:text-base">
-                  We have received your enquiry. A representative from the HappyBoy Group will be in touch with you shortly.
+                  We have received your enquiry. A representative from the Happy Boy Group will be in touch with you shortly.
                 </p>
                 <button
                   onClick={() => setIsSubmitted(false)}
@@ -170,12 +191,12 @@ export default function ContactPage() {
                       <PhoneIcon className="w-4 h-4" strokeWidth={1.5} />
                     </div>
                     <PhoneInput
-                      defaultCountry="us"
+                      defaultCountry="gh"
                       value={phone}
                       onChange={(value) => setPhone(value)}
                       forceDialCode
                       disableDialCodeAndPrefix
-                      placeholder="555 000 0000"
+                      placeholder="54 377 0645"
                       name="phone"
                       required
                       className="hb-phone-input relative z-20 w-full"

@@ -5,13 +5,14 @@ import { ArrowLeftIcon } from 'lucide-react';
 export default function Page() {
   return (
     <div className="flex flex-col w-full min-h-[80vh]">
-      <div className="relative w-full h-[50vh] min-h-[400px]">
+      <div className="relative w-full h-[45vh] sm:h-[50vh] min-h-[320px] sm:min-h-[400px]">
         <Image
           src="https://images.unsplash.com/photo-1582214488219-c0ae2f1ab8cf?q=80&w=2000&auto=format&fit=crop"
           alt="HB Mining"
           fill
           className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
           priority
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 1200px"
         />
         <div className="absolute inset-0 bg-black/40 flex items-end">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-16">
@@ -22,7 +23,7 @@ export default function Page() {
         </div>
       </div>
 
-      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div className="mb-16">
           <Link href="/#portfolio" className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-foreground transition-colors">
             <ArrowLeftIcon className="w-4 h-4 mr-2" />

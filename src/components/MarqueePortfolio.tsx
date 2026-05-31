@@ -1,5 +1,6 @@
-'use client';
+"use client";
 
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRightIcon } from 'lucide-react';
@@ -15,6 +16,8 @@ interface Business {
 export default function MarqueePortfolio({ businesses }: { businesses: Business[] }) {
     // Duplicate businesses to create a seamless infinite loop
     const duplicatedBusinesses = [...businesses, ...businesses, ...businesses];
+
+    const [paused, setPaused] = useState(false);
 
     return (
         <section id="portfolio" className="border-t border-gray-100 bg-white py-16 overflow-hidden">
@@ -64,11 +67,13 @@ export default function MarqueePortfolio({ businesses }: { businesses: Business[
             </div>
 
             <div className="relative hidden md:block w-full flex overflow-x-hidden group">
-                <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
+                <div className="flex w-max animate-marquee" style={{ animationPlayState: paused ? 'paused' : 'running' }}>
                     {duplicatedBusinesses.map((business, idx) => (
                         <Link
                             key={idx}
                             href={business.href}
+                            onPointerEnter={() => setPaused(true)}
+                            onPointerLeave={() => setPaused(false)}
                             className="flex-shrink-0 w-[80vw] sm:w-[50vw] md:w-[400px] mx-2 flex flex-col group/card"
                         >
                             {/* Image Section - mimicking the light gray background in your reference */}

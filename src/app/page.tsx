@@ -3,21 +3,21 @@ import MarqueePortfolio from "@/components/MarqueePortfolio";
 
 const businesses = [
   {
-    title: "Happyboy Collection",
+    title: "Happy Boy Collection",
     description: "Curated fashion and luxury goods emphasizing timeless style and modern elegance.",
     href: "/collection",
     tag: "Retail & Fashion",
     image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800&auto=format&fit=crop"
   },
   {
-    title: "HappyBoy Farms",
+    title: "Happy Boy Farms",
     description: "Sustainable agriculture delivering high-quality organic produce and livestock globally.",
     href: "/farms",
     tag: "Agriculture",
     image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop"
   },
   {
-    title: "Happyboy Homes",
+    title: "Happy Boy Homes",
     description: "Premium real estate development focused on beautifully crafted living spaces.",
     href: "/homes",
     tag: "Real Estate",
@@ -31,7 +31,7 @@ const businesses = [
     image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800&auto=format&fit=crop"
   },
   {
-    title: "HappyBoy Automobile",
+    title: "Happy Boy Automobile",
     description: "Luxury and commercial vehicle distribution, sales, and comprehensive servicing.",
     href: "/automobile",
     tag: "Transport",
@@ -66,7 +66,7 @@ export default function Home() {
             Excellence In Every Industry We Serve™
           </p>
           <h1 className="text-3xl sm:text-6xl lg:text-7xl font-playfair font-normal tracking-tight mb-6 text-white leading-[1.1] max-w-4xl">
-            Redefining Quality & Innovation In Every HappyBoy Enterprise
+            Redefining Quality & Innovation In Every Happy Boy Enterprise
           </h1>
           <p className="text-base sm:text-xl text-white/90 font-light mb-10 max-w-2xl px-4 sm:px-4">
             From sustainable agriculture to premium real estate and luxury goods,
@@ -88,7 +88,7 @@ export default function Home() {
             Ready to Build the Future?
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed mb-10 font-light max-w-2xl">
-            Partner with the HappyBoy Group and experience uncompromising quality across every venture. Let&apos;s discuss how we can achieve excellence together.
+            Partner with the Happy Boy Group and experience uncompromising quality across every venture. Let&apos;s discuss how we can achieve excellence together.
           </p>
           <a href="/contact" className="inline-flex items-center gap-2 border border-gray-900 hover:bg-gray-900 hover:text-white transition-colors text-gray-900 text-[13px] font-semibold tracking-wider uppercase px-8 py-4">
             Get In Touch <span className="text-lg leading-none">&rarr;</span>

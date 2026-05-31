@@ -6,11 +6,11 @@ import { usePathname } from "next/navigation";
 import { ChevronDownIcon, MenuIcon, XIcon } from "lucide-react";
 
 const businesses = [
-  { name: "Happyboy Collection", desc: "Curated fashion & luxury goods", href: "/collection" },
-  { name: "HappyBoy Farms", desc: "Premium livestock & agriculture", href: "/farms" },
-  { name: "Happyboy Homes", desc: "Premium real estate development", href: "/homes" },
+  { name: "Happy Boy Collection", desc: "Curated fashion & luxury goods", href: "/collection" },
+  { name: "Happy Boy Farms", desc: "Premium livestock & agriculture", href: "/farms" },
+  { name: "Happy Boy Homes", desc: "Premium real estate development", href: "/homes" },
   { name: "Nick Phones", desc: "Latest mobile technologies", href: "/nick-phones" },
-  { name: "HappyBoy Automobile", desc: "Luxury & commercial vehicles", href: "/automobile" },
+  { name: "Happy Boy Automobile", desc: "Luxury & commercial vehicles", href: "/automobile" },
   { name: "HB Oil and Gas", desc: "Robust energy solutions", href: "/oil-and-gas" },
   { name: "HB Mining", desc: "Responsible mineral extraction", href: "/mining" },
 ];
@@ -54,7 +54,7 @@ export default function Navbar() {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" /></svg>
             </div>
             <Link href="/" className="text-sm sm:text-lg font-bold tracking-widest uppercase truncate">
-              HAPPYBOY
+              HAPPY BOY
             </Link>
           </div>
 
@@ -157,6 +157,7 @@ export default function Navbar() {
               <Link href="/contact" onClick={closeMobileMenu} className={`rounded-xl px-4 py-3 text-sm font-medium ${pathname === '/contact' ? 'bg-gray-100 text-black' : 'text-gray-700'}`}>
                 Contact
               </Link>
+
             </div>
           </div>
         </div>

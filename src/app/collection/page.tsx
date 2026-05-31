@@ -34,13 +34,14 @@ export default function Page() {
   return (
     <div className="flex flex-col w-full min-h-screen bg-white text-gray-900 overflow-hidden">
       {/* Hero Section */}
-      <div className="relative w-full h-[80vh] min-h-[500px] overflow-hidden group">
+      <div className="relative w-full h-[60vh] sm:h-[80vh] min-h-[320px] sm:min-h-[500px] overflow-hidden group">
         <Image
           src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2000&auto=format&fit=crop"
-          alt="Happyboy Collection"
+          alt="Happy Boy Collection"
           fill
           className="object-cover scale-105 duration-[20000ms] ease-out group-hover:scale-125 pointer-events-none select-none"
           priority
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 1200px"
         />
         {/* Film grain overlay */}
         <div className="absolute inset-0 bg-noise z-0 mix-blend-overlay opacity-20 pointer-events-none select-none"></div>
@@ -49,7 +50,7 @@ export default function Page() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-24 text-center">
             <FadeIn>
               <h1 className="text-5xl sm:text-7xl lg:text-8xl text-white font-playfair mb-6">
-                Happyboy Collection
+                Happy Boy Collection
               </h1>
               <p className="text-white/80 text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto uppercase">
                 Curated Fashion & Luxury Goods
@@ -65,7 +66,7 @@ export default function Page() {
         </div>
       </div>
 
-      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <FadeIn delay={100}>
           <div className="mb-20 text-center">
             <Link href="/#portfolio" className="inline-flex items-center text-sm font-semibold tracking-widest uppercase text-gray-500 hover:text-gray-900 transition-colors">
@@ -83,16 +84,18 @@ export default function Page() {
                 Timeless style combined with modern elegance.
               </h2>
               <p className="text-xl text-gray-500 font-light leading-relaxed">
-                At <strong className="font-semibold text-gray-900">Happyboy Collection</strong>, we believe that style is a reflection of identity. We source materials from the finest artisans globally, bringing together traditional craftsmanship and contemporary design.
+                At <strong className="font-semibold text-gray-900">Happy Boy Collection</strong>, we believe that style is a reflection of identity. We source materials from the finest artisans globally, bringing together traditional craftsmanship and contemporary design.
               </p>
             </div>
           </FadeIn>
-          <FadeIn delay={400} className="relative h-[600px] w-full lg:w-3/5 z-0">
+          <FadeIn delay={400} className="relative h-[320px] md:h-[600px] w-full lg:w-3/5 z-0">
             <Image
               src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=1200&auto=format&fit=crop"
               fill
               className="object-cover pointer-events-none select-none"
               alt="Fashion Philosophy"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 800px"
+              loading="lazy"
             />
             {/* Subtle luxury border */}
             <div className="absolute inset-4 border border-white/50 pointer-events-none select-none mix-blend-overlay"></div>
@@ -111,12 +114,14 @@ export default function Page() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {categories.map((cat, idx) => (
               <FadeIn key={cat.title} delay={idx * 150}>
-                <Link href={`/collection/${cat.slug}`} className="group relative block h-[450px] overflow-hidden cursor-pointer">
+                <Link href={`/collection/${cat.slug}`} className="group relative block h-[320px] md:h-[450px] overflow-hidden cursor-pointer">
                   <Image
                     src={cat.img}
                     alt={cat.title}
                     fill
                     className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 600px"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-colors duration-500" />
                   <div className="absolute inset-0 p-8 flex flex-col justify-end translate-y-8 group-hover:translate-y-0 transition-transform duration-700 ease-out z-20">
@@ -137,7 +142,7 @@ export default function Page() {
 
         {/* Boutiques Call to Action */}
         <FadeIn delay={200}>
-          <div className="relative py-24 px-8 text-center bg-gray-50 overflow-hidden">
+          <div className="relative py-16 sm:py-24 px-8 text-center bg-gray-50 overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full opacity-5">
               <Image
                 src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2000&auto=format&fit=crop"
