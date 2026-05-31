@@ -12,28 +12,36 @@ interface BusinessCardProps {
 
 export default function BusinessCard({ title, description, href, tag, image }: BusinessCardProps) {
   return (
-    <Link href={href} className="group block h-full">
-      <div className="border border-gray-200 dark:border-gray-800 p-8 h-full flex flex-col hover:border-foreground transition-all duration-300 relative overflow-hidden bg-white dark:bg-black">
+    <Link href={href} className="group block h-full bg-white relative overflow-hidden">
+      {/* Base Card */}
+      <div className="p-8 h-full flex flex-col relative transition-all duration-500 min-h-[300px]">
+        {/* Background Image that fades in on hover (or stays visible on mobile) */}
         {image && (
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-10 dark:group-hover:opacity-20 transition-opacity duration-500 z-0">
+          <div className="absolute inset-0 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0">
             <Image
               src={image}
               alt={title}
               fill
-              className="object-cover grayscale"
+              className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
             />
+            {/* Subtle dark overlay so white text remains readable over the image */}
+            <div className="absolute inset-0 bg-black/50 md:bg-black/40" />
           </div>
         )}
-        <div className="relative z-10 flex flex-col h-full">
-          <div className="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6 group-hover:text-foreground transition-colors">
+
+        {/* Content */}
+        <div className="relative z-20 flex flex-col h-full group-hover:-translate-y-2 transition-transform duration-500 ease-out">
+          <div className="text-[10px] font-bold uppercase tracking-widest text-[#B89D58] mb-6">
             {tag}
           </div>
-          <h3 className="text-2xl font-medium tracking-tight mb-4">{title}</h3>
-          <p className="text-gray-500 mb-8 flex-grow">{description}</p>
+          <h3 className="text-2xl font-playfair font-medium text-white md:text-gray-900 group-hover:text-white transition-colors duration-300 mb-4">{title}</h3>
+          <p className="text-gray-200 md:text-gray-500 text-sm leading-relaxed mb-8 flex-grow group-hover:text-gray-200 transition-colors duration-300">
+            {description}
+          </p>
 
-          <div className="flex items-center text-sm font-medium mt-auto group-hover:underline underline-offset-4">
+          <div className="flex items-center text-sm font-semibold text-white md:text-gray-900 group-hover:text-white mt-auto opacity-100 md:opacity-0 md:translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
             Discover {title}
-            <ArrowRightIcon className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+            <ArrowRightIcon className="w-4 h-4 ml-2" />
           </div>
         </div>
       </div>

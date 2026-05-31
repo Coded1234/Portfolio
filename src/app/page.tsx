@@ -1,5 +1,5 @@
-import BusinessCard from "@/components/BusinessCard";
-import Image from "next/image";
+import HeroSlideshow from "@/components/HeroSlideshow";
+import MarqueePortfolio from "@/components/MarqueePortfolio";
 
 const businesses = [
   {
@@ -54,54 +54,45 @@ const businesses = [
 ];
 
 export default function Home() {
+  const heroImages = businesses.map(b => b.image);
+
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-          <div className="grid h-full w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 auto-rows-fr">
-            {businesses.map((business) => (
-              <div key={`hero-bg-${business.title}`} className="relative">
-                <Image
-                  src={business.image}
-                  alt=""
-                  fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
-          <div className="absolute inset-0 bg-white/70 dark:bg-black/40" />
-        </div>
-        <div className="relative z-10 max-w-3xl">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tighter mb-8 leading-tight">
-            Building the foundations for tomorrow.
-          </h1>
-          <p className="text-xl sm:text-2xl text-gray-500 font-light leading-relaxed mb-12">
-            The HappyBoy Group is a diversified portfolio of businesses operating across essential industries worldwide.
-            From sustainable agriculture to premium real estate, we deliver excellence.
+      <section className="relative flex flex-col justify-center overflow-hidden py-24 sm:py-36 lg:py-48 min-h-[82vh] sm:min-h-[90vh] w-full items-center text-center">
+        <HeroSlideshow images={heroImages} />
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center">
+          <p className="text-sm font-medium tracking-[0.2em] text-white uppercase mb-4">
+            Excellence In Every Industry We Serve™
           </p>
+          <h1 className="text-3xl sm:text-6xl lg:text-7xl font-playfair font-normal tracking-tight mb-6 text-white leading-[1.1] max-w-4xl">
+            Redefining Quality & Innovation In Every HappyBoy Enterprise
+          </h1>
+          <p className="text-base sm:text-xl text-white/90 font-light mb-10 max-w-2xl px-4 sm:px-4">
+            From sustainable agriculture to premium real estate and luxury goods,
+            we are building the foundations for tomorrow.
+          </p>
+          <a href="#portfolio" className="border border-white/60 hover:bg-white hover:text-gray-900 transition-colors text-white text-[13px] font-semibold tracking-wider uppercase px-6 sm:px-8 py-3.5 sm:py-4 flex items-center gap-2 backdrop-blur-sm">
+            Explore Portfolio <span className="text-lg leading-none">&rarr;</span>
+          </a>
         </div>
       </section>
 
-      {/* Portfolio Grid */}
-      <section id="portfolio" className="border-t border-gray-200 dark:border-gray-800">
-        <div className="w-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 border-l border-gray-200 dark:border-gray-800">
-            {/* Introductory Block in Grid */}
-            <div className="border-r border-b border-gray-200 dark:border-gray-800 p-8 flex flex-col justify-end bg-gray-50 dark:bg-zinc-900/50 min-h-[300px]">
-              <h2 className="text-2xl font-semibold tracking-tight mb-4">Our Portfolio</h2>
-              <p className="text-gray-500">Explore our diverse range of operating companies driving growth globally.</p>
-            </div>
+      {/* Portfolio Marquee */}
+      <MarqueePortfolio businesses={businesses} />
 
-            {/* The Cards */}
-            {businesses.map((business, idx) => (
-              <div key={idx} className="border-r border-b border-gray-200 dark:border-gray-800 h-full">
-                <BusinessCard {...business} />
-              </div>
-            ))}
-          </div>
+      {/* Call to Action Section */}
+      <section className="py-24 bg-white relative z-20 border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-normal tracking-tight text-gray-900 mb-6">
+            Ready to Build the Future?
+          </h2>
+          <p className="text-gray-500 text-lg leading-relaxed mb-10 font-light max-w-2xl">
+            Partner with the HappyBoy Group and experience uncompromising quality across every venture. Let&apos;s discuss how we can achieve excellence together.
+          </p>
+          <a href="/contact" className="inline-flex items-center gap-2 border border-gray-900 hover:bg-gray-900 hover:text-white transition-colors text-gray-900 text-[13px] font-semibold tracking-wider uppercase px-8 py-4">
+            Get In Touch <span className="text-lg leading-none">&rarr;</span>
+          </a>
         </div>
       </section>
     </div>

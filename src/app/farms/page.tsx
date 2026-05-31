@@ -32,21 +32,21 @@ export default function Page() {
 
         <div className="max-w-3xl">
           <p className="text-2xl text-gray-500 font-light leading-relaxed mb-12">
-            Sustainable agriculture delivering high-quality organic produce and livestock globally. We embrace modern farming techniques to feed the future responsibly.
+            Leading providers of high-quality livestock and poultry. From premium cattle and pork to extensive organic poultry operations, we embrace humane, modern farming techniques to feed the future responsibly.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mt-16 pt-16 border-t border-gray-200 dark:border-gray-800">
           <div>
-            <h3 className="text-2xl font-medium tracking-tight mb-4">Sustainable Practices</h3>
+            <h3 className="text-2xl font-medium tracking-tight mb-4">Ethical Livestock & Poultry</h3>
             <p className="text-gray-500 leading-relaxed">
-              We utilize vertical farming, advanced hydroponics, and crop rotation to maximize yield while minimizing ecological impact. Our commitment is entirely to organic growth without reliance on harmful chemicals.
+              Our farms specialize in premium cows and pigs, alongside extensive poultry operations. We utilize advanced veterinary monitoring, spacious free-range grazing, and organic feed to ensure the highest standards of animal welfare and meat quality.
             </p>
           </div>
           <div>
             <h3 className="text-2xl font-medium tracking-tight mb-4">Global Distribution</h3>
             <p className="text-gray-500 leading-relaxed mb-6">
-              Our cold-chain logistics ensure that farm-fresh produce reaches international markets within 48 hours of harvest. Quality is maintained from the soil to the shelf.
+              Our specialized cold-chain logistics ensure that farm-fresh poultry and premium meat cuts reach international markets securely. Quality is maintained from the farm to the table.
             </p>
             <Link href="/contact">
               <button className="px-6 py-3 bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity">
