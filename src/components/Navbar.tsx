@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDownIcon, MenuIcon, XIcon } from "lucide-react";
@@ -18,6 +18,7 @@ const businesses = [
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileBusinessesOpen, setIsMobileBusinessesOpen] = useState(false);
+  const navRef = useRef<HTMLElement | null>(null);
   const pathname = usePathname();
 
   const isBusinessPage = ['/collection', '/farms', '/homes', '/nick-phones', '/automobile', '/oil-and-gas', '/mining'].includes(pathname);
@@ -27,12 +28,28 @@ export default function Navbar() {
     setIsMobileBusinessesOpen(false);
   };
 
+  useEffect(() => {
+    const handlePointerDown = (event: PointerEvent) => {
+      if (!isMobileMenuOpen) {
+        return;
+      }
+
+      const target = event.target as Node | null;
+      if (target && navRef.current && !navRef.current.contains(target)) {
+        closeMobileMenu();
+      }
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
+  }, [isMobileMenuOpen]);
+
   return (
-    <nav className="fixed top-3 left-1/2 -translate-x-1/2 w-[calc(100%-1rem)] max-w-6xl z-[200] isolate rounded-2xl md:rounded-full border border-gray-200 bg-white/80 md:bg-white/60 backdrop-blur-lg shadow-sm pointer-events-auto">
+    <nav ref={navRef} className="fixed top-3 left-1/2 -translate-x-1/2 w-[calc(100%-1rem)] max-w-6xl z-[200] isolate rounded-2xl md:rounded-full border border-gray-200 bg-white/80 md:bg-white/60 backdrop-blur-lg shadow-sm pointer-events-auto">
       <div className="px-4 sm:px-6 py-3 md:py-3">
-        <div className="flex items-center gap-3 min-h-10 md:h-10">
+        <div className="flex items-center gap-3 min-h-10 md:grid md:min-h-10 md:grid-cols-[1fr_auto_1fr] md:items-center">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center gap-2 min-w-0">
+          <div className="flex-shrink-0 flex items-center gap-2 min-w-0 md:justify-self-start">
             <div className="w-8 h-8 flex items-center justify-center rounded-md text-foreground">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" /></svg>
             </div>
@@ -42,7 +59,7 @@ export default function Navbar() {
           </div>
 
           {/* Centered Links */}
-          <div className="hidden md:flex items-center space-x-2">
+          <div className="hidden md:flex md:justify-self-center items-center space-x-2">
             <Link href="/" className={`text-sm font-medium px-4 py-1.5 rounded-full transition-colors ${pathname === '/' ? 'bg-white shadow-sm text-black' : 'text-gray-600 hover:text-black hover:bg-white/50'}`}>
               Home
             </Link>
@@ -81,17 +98,20 @@ export default function Navbar() {
             </Link>
           </div>
 
-          <div className="hidden md:flex items-center w-32" />
+          <div className="hidden md:flex md:justify-self-end items-center" />
 
           <button
             type="button"
-            className="md:hidden ml-auto inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-none border-0 bg-transparent text-gray-800 shadow-none transition active:scale-95 touch-manipulation"
+            className="md:hidden relative z-50 ml-auto inline-flex h-12 w-12 shrink-0 cursor-pointer items-center justify-center rounded-none border-0 bg-transparent text-gray-800 shadow-none transition active:scale-95 touch-manipulation"
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-nav-menu"
             aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-            onClick={() => setIsMobileMenuOpen((open) => !open)}
+            onClick={(event) => {
+              event.stopPropagation();
+              setIsMobileMenuOpen((open) => !open);
+            }}
           >
-            {isMobileMenuOpen ? <XIcon className="h-5 w-5" strokeWidth={2.25} /> : <MenuIcon className="h-5 w-5" strokeWidth={2.25} />}
+            {isMobileMenuOpen ? <XIcon className="h-5 w-5 pointer-events-none" strokeWidth={2.25} /> : <MenuIcon className="h-5 w-5 pointer-events-none" strokeWidth={2.25} />}
           </button>
         </div>
 
@@ -112,10 +132,13 @@ export default function Navbar() {
                   type="button"
                   className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium ${isBusinessPage ? 'bg-gray-100 text-black' : 'text-gray-700'}`}
                   aria-expanded={isMobileBusinessesOpen}
-                  onClick={() => setIsMobileBusinessesOpen((open) => !open)}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    setIsMobileBusinessesOpen((open) => !open);
+                  }}
                 >
                   <span>Businesses</span>
-                  <ChevronDownIcon className={`h-4 w-4 transition-transform duration-200 ${isMobileBusinessesOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDownIcon className={`h-4 w-4 pointer-events-none transition-transform duration-200 ${isMobileBusinessesOpen ? 'rotate-180' : ''}`} />
                 </button>
                 <div className={`${isMobileBusinessesOpen ? 'grid' : 'hidden'} grid-cols-1 gap-1 border-t border-gray-100 p-2`}>
                   {businesses.map((b) => (
