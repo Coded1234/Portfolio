@@ -54,7 +54,7 @@ export default function Footer() {
 
               <ul className="flex flex-col gap-3 mt-4 lg:mt-0">
                 <li><Link href="/automobile" className="hover:text-gray-900 transition-colors whitespace-nowrap">Happy Boy Automobile</Link></li>
-                <li><Link href="/oil-and-gas" className="hover:text-gray-900 transition-colors whitespace-nowrap">HB Oil and Gas</Link></li>
+                <li><Link href="/oil-and-gas" className="hover:text-gray-900 transition-colors whitespace-nowrap">HB Oil and Gas <span className="text-gray-400">(Coming Soon)</span></Link></li>
                 <li><Link href="/mining" className="hover:text-gray-900 transition-colors whitespace-nowrap">HB Mining</Link></li>
               </ul>
             </div>

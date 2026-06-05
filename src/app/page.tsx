@@ -42,7 +42,8 @@ const businesses = [
     description: "Robust energy solutions prioritizing efficiency, reliability, and security of supply.",
     href: "/oil-and-gas",
     tag: "Energy",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop",
+    comingSoon: true
   },
   {
     title: "HB Mining",

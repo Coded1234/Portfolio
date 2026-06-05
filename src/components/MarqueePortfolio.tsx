@@ -11,6 +11,7 @@ interface Business {
     href: string;
     tag: string;
     image: string;
+    comingSoon?: boolean;
 }
 
 export default function MarqueePortfolio({ businesses }: { businesses: Business[] }) {
@@ -57,7 +58,7 @@ export default function MarqueePortfolio({ businesses }: { businesses: Business[
                                 </div>
 
                                 <div className="flex items-center justify-between mt-6">
-                                    <span className="text-[13px] font-bold text-gray-900">EXPLORE</span>
+                                    <span className="text-[13px] font-bold text-gray-900">{business.comingSoon ? "COMING SOON" : "EXPLORE"}</span>
                                     <ArrowRightIcon className="w-4 h-4 text-gray-600" />
                                 </div>
                             </div>
@@ -96,7 +97,7 @@ export default function MarqueePortfolio({ businesses }: { businesses: Business[
                                 </div>
 
                                 <div className="flex items-center justify-between mt-6">
-                                    <span className="text-[13px] font-bold text-gray-900">EXPLORE</span>
+                                    <span className="text-[13px] font-bold text-gray-900">{business.comingSoon ? "COMING SOON" : "EXPLORE"}</span>
                                     <ArrowRightIcon className="w-4 h-4 text-gray-600 group-hover/card:text-gray-900 group-hover/card:translate-x-1 transition-all" />
                                 </div>
                             </div>
