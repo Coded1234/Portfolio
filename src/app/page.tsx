@@ -14,7 +14,7 @@ const businesses = [
     description: "Sustainable agriculture delivering high-quality organic produce and livestock globally.",
     href: "/farms",
     tag: "Agriculture",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop"
+    image: "/images/farms/pigs.jpg"
   },
   {
     title: "Happy Boy Homes",

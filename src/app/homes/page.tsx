@@ -3,34 +3,38 @@ import Image from "next/image";
 import { ArrowDownIcon, MapPinIcon, ArrowLeftIcon } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 
-const featuredProperties = [
+type Project =
+  | { name: string; location: string; status: string; desc: string; image: string; video?: never }
+  | { name: string; location: string; status: string; desc: string; video: string; image?: never };
+
+const projects: Project[] = [
   {
-    name: "The Monarch Estate",
-    location: "Beverly Hills, CA",
-    price: "GHS 24,500,000",
-    specs: "6 Beds • 8 Baths • 12,000 sqft",
-    image: "https://images.unsplash.com/photo-1613490900233-141c5560d75d?q=80&w=1200&auto=format&fit=crop"
+    name: "Residential Block A",
+    location: "Accra, Ghana",
+    status: "Completed",
+    desc: "A fully delivered multi-unit residential development featuring modern finishes, secure parking, and quality craftsmanship throughout.",
+    image: "/images/homes/building-1.jpg"
   },
   {
-    name: "Oceanview Villa",
-    location: "Malibu, CA",
-    price: "GHS 18,200,000",
-    specs: "5 Beds • 6 Baths • 8,500 sqft",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop"
+    name: "Residential Block B",
+    location: "Accra, Ghana",
+    status: "Completed",
+    desc: "Completed housing units built to high standards with durable materials, functional layouts, and attention to long-term livability.",
+    image: "/images/homes/building-2.jpg"
   },
   {
-    name: "The Zenith Penthouse",
-    location: "Manhattan, NY",
-    price: "GHS 12,800,000",
-    specs: "4 Beds • 4.5 Baths • 5,000 sqft",
-    image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop"
+    name: "Residential Block C",
+    location: "Accra, Ghana",
+    status: "Ongoing",
+    desc: "Currently under construction — structural work and exterior finishing are progressing on schedule toward handover.",
+    image: "/images/homes/building-3.jpg"
   },
   {
-    name: "Alpine Retreat",
-    location: "Aspen, CO",
-    price: "GHS 21,000,000",
-    specs: "7 Beds • 9 Baths • 14,200 sqft",
-    image: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?q=80&w=1200&auto=format&fit=crop"
+    name: "Mixed-Use Development",
+    location: "Accra, Ghana",
+    status: "Ongoing",
+    desc: "An active build site combining residential and commercial spaces, with foundations and framing advancing across the project.",
+    video: "/images/homes/building-video.mp4"
   }
 ];
 
@@ -108,46 +112,55 @@ export default function Page() {
           </FadeIn>
         </div>
 
-        {/* Featured Properties Grid */}
+        {/* Projects Grid */}
         <div className="mb-32">
           <FadeIn>
             <div className="text-center mb-20">
               <span className="text-gray-400 text-sm tracking-widest uppercase font-semibold block mb-4">The Portfolio</span>
-              <h2 className="text-4xl md:text-5xl font-playfair mb-6">Exclusive Listings</h2>
+              <h2 className="text-4xl md:text-5xl font-playfair mb-6">Our Projects</h2>
               <div className="w-12 h-[1px] bg-[#B89D58] mx-auto"></div>
             </div>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {featuredProperties.map((prop, idx) => (
-              <FadeIn key={idx} delay={idx * 150} className="group cursor-pointer">
+            {projects.map((project, idx) => (
+              <FadeIn key={idx} delay={idx * 150} className="group">
                 <div className="relative h-[280px] md:h-[450px] w-full overflow-hidden mb-6 bg-gray-100">
-                  <Image
-                    src={prop.image}
-                    alt={prop.name}
-                    fill
-                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                  />
+                  {"video" in project ? (
+                    <video
+                      src={project.video}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                    />
+                  ) : (
+                    <Image
+                      src={project.image}
+                      alt={project.name}
+                      fill
+                      className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 600px"
+                      loading="lazy"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
 
-                  {/* Floating Price Tag */}
-                  <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm px-4 py-2 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
-                    <span className="font-mono font-semibold text-gray-900 tracking-wider">{prop.price}</span>
+                  <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm px-4 py-2">
+                    <span className="text-xs font-bold uppercase tracking-widest text-gray-900">{project.status}</span>
                   </div>
                 </div>
 
                 <div>
                   <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-2xl font-playfair text-gray-900 group-hover:text-[#B89D58] transition-colors">{prop.name}</h3>
+                    <h3 className="text-2xl font-playfair text-gray-900 group-hover:text-[#B89D58] transition-colors">{project.name}</h3>
                   </div>
                   <div className="flex items-center gap-2 text-gray-500 text-sm mb-4">
                     <MapPinIcon className="w-4 h-4 text-[#B89D58]" />
-                    <span className="uppercase tracking-widest">{prop.location}</span>
+                    <span className="uppercase tracking-widest">{project.location}</span>
                   </div>
-                  <div className="pt-4 border-t border-gray-100 flex justify-between items-center text-sm font-light text-gray-600">
-                    <span>{prop.specs}</span>
-                    <span className="uppercase tracking-widest text-xs font-bold text-gray-900 group-hover:translate-x-2 transition-transform duration-300">View Details &rarr;</span>
-                  </div>
+                  <p className="text-gray-600 font-light leading-relaxed">{project.desc}</p>
                 </div>
               </FadeIn>
             ))}

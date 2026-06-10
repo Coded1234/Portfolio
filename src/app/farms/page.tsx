@@ -3,30 +3,34 @@ import Image from 'next/image';
 import { ArrowLeftIcon, ArrowDownIcon } from 'lucide-react';
 import FadeIn from "@/components/FadeIn";
 
-const operations = [
+type Operation =
+  | { name: string; type: string; desc: string; image: string; video?: never }
+  | { name: string; type: string; desc: string; video: string; image?: never };
+
+const operations: Operation[] = [
   {
     name: "Heritage Swine",
     type: "Ethical Livestock",
     desc: "Raising elite pig bloodlines with extensive veterinary care and specialized organic feed to ensure unmatched meat quality.",
-    image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?q=80&w=1200&auto=format&fit=crop"
+    video: "/images/farms/pigs-video.mp4"
   },
   {
     name: "Free-Range Poultry",
     type: "Organic Farming",
     desc: "Expansive free-range environments designed to deliver the healthiest, ethically raised poultry to premium markets.",
-    image: "https://images.unsplash.com/photo-1548550023-2bf3c49b338c?q=80&w=1200&auto=format&fit=crop"
+    video: "/images/farms/poultry-vid.mp4"
   },
   {
-    name: "Veterinary Excellence",
-    type: "Animal Welfare",
-    desc: "Continuous health monitoring and specialized care protocols ensuring the highest standards of welfare for our pigs and poultry.",
-    image: "https://images.unsplash.com/photo-1584852936254-073c683b544b?q=80&w=1200&auto=format&fit=crop"
+    name: "Premium Pigs",
+    type: "Swine Production",
+    desc: "Healthy, well-cared-for pigs raised on our farm with quality feed, clean housing, and attentive daily management for superior livestock.",
+    image: "/images/farms/pigs.jpg"
   },
   {
-    name: "Cold-Chain Logistics",
-    type: "Global Distribution",
-    desc: "State-of-the-art climate-controlled transport networks ensuring farm-fresh delivery to premium retail and hospitality partners.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8ed7c15274?q=80&w=1200&auto=format&fit=crop"
+    name: "Poultry Eggs",
+    type: "Fresh Farm Eggs",
+    desc: "Nutritious, farm-fresh eggs from our free-range poultry — collected daily and handled with care for households, retailers, and partners.",
+    video: "/images/farms/poultry-eggs.mp4"
   }
 ];
 
@@ -36,7 +40,7 @@ export default function Page() {
       {/* Hero Section */}
       <div className="relative w-full h-[60vh] sm:h-[80vh] min-h-[320px] sm:min-h-[500px] overflow-hidden group">
         <Image
-          src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000&auto=format&fit=crop"
+          src="/images/farms/farm hero.png"
           alt="Happy Boy Farms"
           fill
           className="object-cover scale-105 duration-[20000ms] ease-out group-hover:scale-125 pointer-events-none select-none"
@@ -80,6 +84,15 @@ export default function Page() {
         <div className="flex flex-col lg:flex-row items-center mb-40 relative">
           <FadeIn delay={200} className="lg:w-1/2 lg:pr-16 z-20 lg:-mr-12 relative lg:mt-32">
             <div className="bg-white p-8 lg:p-16 shadow-2xl border border-gray-100">
+              <div className="relative w-full max-w-[280px] h-32 mx-auto lg:mx-0 mb-8">
+                <Image
+                  src="/images/farms/farms-logo .jpg"
+                  alt="Happy Boy Farms logo"
+                  fill
+                  className="object-contain object-left"
+                  sizes="280px"
+                />
+              </div>
               <span className="text-[#B89D58] text-sm uppercase font-bold tracking-widest mb-4 block">Our Operations</span>
               <h2 className="text-4xl md:text-5xl font-playfair leading-tight mb-8">
                 Cultivating quality through sustainable practices.
@@ -91,7 +104,7 @@ export default function Page() {
           </FadeIn>
           <FadeIn delay={400} className="relative h-[320px] md:h-[500px] lg:h-[700px] w-full lg:w-3/5 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1598402283838-8e6cbb7bf317?q=80&w=1200&auto=format&fit=crop"
+              src="/images/farms/pig.jpg"
               fill
               className="object-cover pointer-events-none select-none"
               alt="Farm Operations"
@@ -117,14 +130,25 @@ export default function Page() {
             {operations.map((op, idx) => (
               <FadeIn key={idx} delay={idx * 150} className="group cursor-pointer">
                 <div className="relative h-[280px] md:h-[400px] w-full overflow-hidden mb-6 bg-gray-100">
-                  <Image
-                    src={op.image}
-                    alt={op.name}
-                    fill
-                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 600px"
-                    loading="lazy"
-                  />
+                  {"video" in op ? (
+                    <video
+                      src={op.video}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                    />
+                  ) : (
+                    <Image
+                      src={op.image}
+                      alt={op.name}
+                      fill
+                      className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 600px"
+                      loading="lazy"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
                 </div>
 
@@ -147,7 +171,7 @@ export default function Page() {
           <div className="relative py-32 px-8 text-center bg-gray-900 text-white overflow-hidden">
             <div className="absolute inset-0 z-0">
               <Image
-                src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000&auto=format&fit=crop"
+                src="/images/farms/pigs.jpg"
                 fill
                 className="object-cover opacity-10"
                 alt="Farms Background"
