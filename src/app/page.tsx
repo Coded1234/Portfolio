@@ -25,7 +25,7 @@ const businesses = [
   },
   {
     title: "Nick Phones",
-    description: "Latest mobile technologies and telecommunication accessories.",
+    description: "Your trusted iPhone specialist — new, pre-owned, and rental iPhones with full support.",
     href: "/nick-phones",
     tag: "Electronics",
     image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800&auto=format&fit=crop"

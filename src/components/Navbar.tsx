@@ -9,7 +9,7 @@ const businesses = [
   { name: "Happy Boy Collection", desc: "Curated fashion & luxury goods", href: "/collection" },
   { name: "Happy Boy Farms", desc: "Premium livestock & agriculture", href: "/farms" },
   { name: "Happy Boy Homes", desc: "Premium real estate development", href: "/homes" },
-  { name: "Nick Phones", desc: "Latest mobile technologies", href: "/nick-phones" },
+  { name: "Nick Phones", desc: "iPhone specialist", href: "/nick-phones" },
   { name: "Happy Boy Automobile", desc: "Luxury & commercial vehicles", href: "/automobile" },
   { name: "HB Oil and Gas", desc: "Coming soon", href: "/oil-and-gas" },
   { name: "HB Mining", desc: "Responsible mineral extraction", href: "/mining" },

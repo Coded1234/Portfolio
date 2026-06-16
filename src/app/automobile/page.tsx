@@ -5,32 +5,29 @@ import FadeIn from "@/components/FadeIn";
 
 const fleet = [
   {
-    model: "The Phantom",
-    type: "Ultra-Luxury Sedan",
-    specs: "V12 Biturbo • 0-60: 3.8s",
-    desc: "Available for purchase and exclusive short-term rentals; fully certified and concierge-ready.",
-    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1200&auto=format&fit=crop"
+    model: "Toyota RAV4",
+    type: "Compact SUV",
+    desc: "A versatile all-terrain SUV with rugged styling, all-wheel drive capability, and a spacious cabin — ideal for daily driving, family use, and weekend adventures.",
+    image: "/images/automobile/car1.png"
+  },
+  
+  {
+    model: "Toyota Highlander",
+    type: "Mid-Size SUV",
+    desc: "A premium family SUV offering three-row seating, a commanding road presence, and smooth performance — perfect for long journeys and comfortable group travel.",
+    image: "/images/automobile/car3.png"
   },
   {
-    model: "The Vanguard",
-    type: "All-Terrain SUV",
-    specs: "Electric AWD • 450mi Range",
-    desc: "Off-road capability for sale or part of our curated rental programs with bespoke packages.",
-    image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop"
+    model: "Hyundai Elantra",
+    type: "Compact Sedan",
+    desc: "A refined and fuel-efficient sedan with a sleek profile, modern front grille, and comfortable interior — a reliable choice for city commutes and business travel.",
+    image: "/images/automobile/car4.png"
   },
   {
-    model: "The Eclipse",
-    type: "Grand Tourer Coupe",
-    specs: "Hybrid V8 • 800 HP",
-    desc: "A performance-focused tourer offered for purchase and seasonal luxury rentals.",
-    image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1200&auto=format&fit=crop"
-  },
-  {
-    model: "The Hauler",
-    type: "Commercial Utility",
-    specs: "Hydrogen Fuel Cell • 40t Tow",
-    desc: "Commercial units available for sale and long-term fleet leasing with full service agreements.",
-    image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1200&auto=format&fit=crop"
+    model: "Honda Civic",
+    type: "Executive Sedan",
+    desc: "A timeless sedan known for its aerodynamic design, efficient performance, and premium finish — available for purchase and long-term rental with full servicing support.",
+    image: "/images/automobile/car5.png"
   }
 ];
 
@@ -40,7 +37,7 @@ export default function Page() {
       {/* Hero Section */}
       <div className="relative w-full h-[60vh] sm:h-[80vh] min-h-[320px] sm:min-h-[500px] overflow-hidden group">
         <Image
-          src="https://images.unsplash.com/photo-1503376710356-70e68c85f4ba?q=80&w=2000&auto=format&fit=crop"
+          src="/images/automobile/hero.png"
           alt="Happy Boy Automobile"
           fill
           className="object-cover scale-105 duration-[20000ms] ease-out group-hover:scale-125 pointer-events-none select-none"
@@ -89,16 +86,16 @@ export default function Page() {
                 Curated mobility, tailored for ownership and experience.
               </h2>
               <p className="text-xl text-gray-500 font-light leading-relaxed">
-                We specialize in premium vehicle sales and bespoke rental experiences. Across our global dealerships and partner fleets, we source, certify, and maintain each vehicle to the highest standards—offering short-term luxury rentals, long-term fleet solutions, and concierge services that remove friction from every journey.
+                From compact sedans to capable SUVs, we source and maintain a handpicked fleet of trusted brands including Toyota, Honda, and Hyundai. Each vehicle is inspected, certified, and ready for purchase or rental — with flexible packages for personal use, business fleets, and long-term leasing.
               </p>
             </div>
           </FadeIn>
           <FadeIn delay={400} className="relative h-[320px] md:h-[500px] lg:h-[700px] w-full lg:w-3/5 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=1200&auto=format&fit=crop"
+              src="/images/automobile/car3.png"
               fill
               className="object-cover pointer-events-none select-none"
-              alt="Engineering Excellence"
+              alt="Toyota Highlander"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 1000px"
               loading="lazy"
             />
@@ -119,13 +116,15 @@ export default function Page() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {fleet.map((car, idx) => (
-              <FadeIn key={idx} delay={idx * 150} className="group cursor-pointer">
+              <FadeIn key={idx} delay={idx * 150} className="group">
                 <div className="relative h-[280px] md:h-[400px] w-full overflow-hidden mb-6 bg-gray-100">
                   <Image
                     src={car.image}
                     alt={car.model}
                     fill
                     className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 600px"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
                 </div>
@@ -138,7 +137,6 @@ export default function Page() {
                     <span className="uppercase tracking-widest">{car.type}</span>
                   </div>
                   <p className="text-gray-600 font-light mb-4">{car.desc}</p>
-                  {/* specs and direct "View Specs" removed per request */}
                 </div>
               </FadeIn>
             ))}
@@ -150,7 +148,7 @@ export default function Page() {
           <div className="relative py-32 px-8 text-center bg-gray-900 text-white overflow-hidden">
             <div className="absolute inset-0 z-0">
               <Image
-                src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?q=80&w=2000&auto=format&fit=crop"
+                src="/images/automobile/hero.png"
                 fill
                 className="object-cover opacity-10"
                 alt="Showroom background"
@@ -161,7 +159,7 @@ export default function Page() {
               <span className="text-[#B89D58] text-sm uppercase font-bold tracking-widest mb-6 block">Global Dealerships</span>
               <h3 className="text-4xl md:text-5xl font-playfair mb-8">Experience the drive.</h3>
               <p className="text-white/70 leading-relaxed mb-12 text-lg font-light">
-                Locate a Happy Boy showroom near you for exclusive test drives and premium after-sales services. Handcrafted luxury is meant to be felt.
+                Browse our current inventory of sedans and SUVs, schedule a test drive, or enquire about rental and fleet packages. Every vehicle is backed by our commitment to quality and after-sales support.
               </p>
               <Link href="/contact" className="inline-flex items-center gap-2 border border-white hover:bg-white hover:text-gray-900 transition-colors text-white text-[13px] font-semibold tracking-wider uppercase px-10 py-5">
                 Schedule a Visit <span className="text-lg leading-none">&rarr;</span>

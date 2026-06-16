@@ -3,30 +3,34 @@ import Image from 'next/image';
 import { ArrowLeftIcon, ArrowDownIcon } from 'lucide-react';
 import FadeIn from "@/components/FadeIn";
 
-const operations = [
+type Operation =
+  | { name: string; type: string; desc: string; image: string; video?: never }
+  | { name: string; type: string; desc: string; video: string; image?: never };
+
+const operations: Operation[] = [
   {
-    name: "Deep Shaft Extraction",
-    type: "Primary Gold Ore",
-    desc: "Advanced deep-shaft operations utilizing state-of-the-art seismic monitoring to extract high-yield gold ore safely and efficiently.",
-    image: "https://images.unsplash.com/photo-1621508654686-809f23efdabc?q=80&w=1200&auto=format&fit=crop"
+    name: "Underground Gold Mining",
+    type: "Deep-Level Extraction",
+    desc: "Our underground operations reach high-grade gold veins through controlled tunneling and shaft work, with trained crews, ventilation systems, and safety protocols at every stage of extraction.",
+    image: "/images/mining/underground_mining_tunnel.png"
   },
   {
-    name: "Open Pit Mining",
-    type: "Surface Gold Deposits",
-    desc: "Responsible surface mining focused on low-impact extraction methods and comprehensive site rehabilitation post-operation.",
-    image: "https://images.unsplash.com/photo-1578330752766-3d234a5dca8a?q=80&w=1200&auto=format&fit=crop"
+    name: "Gold Processing & Refinement",
+    type: "Ore to Bullion",
+    desc: "Raw ore is crushed, milled, and refined on site to recover pure gold — turning extracted material into market-ready bullion through careful processing and quality assurance.",
+    video: "/images/mining/gold.mp4"
   },
   {
-    name: "Ore Processing",
-    type: "Refinement & Purification",
-    desc: "On-site refinement facilities employing eco-conscious leaching technologies to achieve industry-leading gold purity levels.",
-    image: "https://images.unsplash.com/photo-1601053073995-1f9db564177b?q=80&w=1200&auto=format&fit=crop"
+    name: "Site Operations",
+    type: "Production Management",
+    desc: "Coordinated shift planning, equipment maintenance, and environmental monitoring keep our mining sites productive, compliant, and operating to the highest safety standards.",
+    video: "/images/mining/underground-mining.mp4"
   },
   {
-    name: "Secure Transport",
-    type: "Logistics & Vaulting",
-    desc: "End-to-end secure logistics ensuring the safe transport of bullion to global financial hubs and luxury jewelers.",
-    image: "https://images.unsplash.com/photo-1621504450181-5d356f61d307?q=80&w=1200&auto=format&fit=crop"
+    name: "Secure Logistics",
+    type: "Bullion Transport",
+    desc: "Processed gold is handled, documented, and transported through secure channels — ensuring traceability from mine to vault for partners, refineries, and institutional buyers.",
+    image: "/images/mining/gold_bars_vault.png"
   }
 ];
 
@@ -36,8 +40,8 @@ export default function Page() {
       {/* Hero Section */}
       <div className="relative w-full h-[60vh] sm:h-[80vh] min-h-[320px] sm:min-h-[500px] overflow-hidden group">
         <Image
-          src="https://images.unsplash.com/photo-1582214488219-c0ae2f1ab8cf?q=80&w=2000&auto=format&fit=crop"
-          alt="HB Gold Mining"
+          src="/images/mining/gold_mine_hero.png"
+          alt="HB Mining"
           fill
           className="object-cover scale-105 duration-[20000ms] ease-out group-hover:scale-125 pointer-events-none select-none"
           priority
@@ -85,16 +89,16 @@ export default function Page() {
                 Premium gold mining with uncompromising standards.
               </h2>
               <p className="text-xl text-gray-500 font-light leading-relaxed">
-                We specialize exclusively in high-yield gold extraction and processing. Our operations utilize both deep shaft and open-pit methodologies, coupled with advanced eco-conscious refinement to supply the world&apos;s most discerning luxury jewelers and financial reserve networks.
+                From underground extraction to on-site gold processing, our operations are built for yield, safety, and accountability. We combine deep-level mining expertise with modern refinement practices to deliver high-purity gold to partners who demand transparency at every step.
               </p>
             </div>
           </FadeIn>
           <FadeIn delay={400} className="relative h-[320px] md:h-[500px] lg:h-[700px] w-full lg:w-3/5 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1574971207604-58a5c6e8346e?q=80&w=1200&auto=format&fit=crop"
+              src="/images/mining/underground_mining_tunnel.png"
               fill
               className="object-cover pointer-events-none select-none"
-              alt="Gold Mining Operations"
+              alt="Mining Operations"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 1000px"
               loading="lazy"
             />
@@ -115,16 +119,27 @@ export default function Page() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {operations.map((op, idx) => (
-              <FadeIn key={idx} delay={idx * 150} className="group cursor-pointer">
+              <FadeIn key={idx} delay={idx * 150} className="group">
                 <div className="relative h-[280px] md:h-[400px] w-full overflow-hidden mb-6 bg-gray-100">
-                  <Image
-                    src={op.image}
-                    alt={op.name}
-                    fill
-                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 600px"
-                    loading="lazy"
-                  />
+                  {"video" in op ? (
+                    <video
+                      src={op.video}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                    />
+                  ) : (
+                    <Image
+                      src={op.image}
+                      alt={op.name}
+                      fill
+                      className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 600px"
+                      loading="lazy"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
                 </div>
 
@@ -146,11 +161,13 @@ export default function Page() {
         <FadeIn delay={200}>
           <div className="relative py-32 px-8 text-center bg-gray-900 text-white overflow-hidden">
             <div className="absolute inset-0 z-0">
-              <Image
-                src="https://images.unsplash.com/photo-1582214488219-c0ae2f1ab8cf?q=80&w=2000&auto=format&fit=crop"
-                fill
-                className="object-cover opacity-10"
-                alt="Gold Mining Background"
+              <video
+                src="/images/mining/gold_bars_vault.png"
+                className="absolute inset-0 h-full w-full object-cover opacity-10"
+                autoPlay
+                muted
+                loop
+                playsInline
               />
               <div className="absolute inset-0 bg-noise mix-blend-overlay opacity-20"></div>
             </div>
@@ -158,7 +175,7 @@ export default function Page() {
               <span className="text-[#B89D58] text-sm uppercase font-bold tracking-widest mb-6 block">Supply & Security</span>
               <h3 className="text-4xl md:text-5xl font-playfair mb-8">Secure your gold reserves.</h3>
               <p className="text-white/70 leading-relaxed mb-12 text-lg font-light">
-                From raw ore to purified bullion, we offer direct access to ethically extracted gold. Partner with us to secure a stable and transparent supply chain.
+                From underground extraction to refined bullion, we offer direct access to responsibly mined gold. Partner with us for a stable, transparent supply chain backed by on-the-ground operations.
               </p>
               <Link href="/contact" className="inline-flex items-center gap-2 border border-white hover:bg-white hover:text-gray-900 transition-colors text-white text-[13px] font-semibold tracking-wider uppercase px-10 py-5">
                 Contact Operations <span className="text-lg leading-none">&rarr;</span>
