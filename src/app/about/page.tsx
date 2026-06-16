@@ -92,7 +92,7 @@ export default function AboutPage() {
                 Founder & Chairman
               </p>
               <h2 className="text-3xl sm:text-5xl font-playfair font-normal mb-6 sm:mb-8 text-gray-900 leading-tight">
-                Mr. Happy Boy
+                Mr. Nickson Manasseh
               </h2>
 
               <div className="space-y-5 sm:space-y-6 text-gray-600 font-light text-base sm:text-lg leading-relaxed">

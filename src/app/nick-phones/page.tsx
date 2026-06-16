@@ -5,15 +5,15 @@ import FadeIn from "@/components/FadeIn";
 
 const lineup = [
   {
-    name: 'iPhones for Sale & Rent',
+    name: 'iPhone Sales',
     category: 'Pro Max · Pro · Standard',
-    copy: 'New and certified pre-owned iPhones across every series — from the latest Pro Max to everyday models. Each device is inspected, configured, and ready to use with flexible purchase or rental options.',
+    copy: 'New and certified pre-owned iPhones across every series — from the latest Pro Max to everyday models. Each device is meticulously inspected, certified, and ready for immediate purchase.',
     image: 'https://images.unsplash.com/photo-1695048133142-1c2042a5f962?q=80&w=1200&auto=format&fit=crop'
   },
   {
-    name: 'Trade-In & Accessories',
-    category: 'Support & Upgrades',
-    copy: 'Genuine Apple accessories, screen protection, cases, and fair trade-in values to help you upgrade to your next iPhone with ease.',
+    name: 'Apple Accessories',
+    category: 'Cases · Chargers · Audio',
+    copy: 'Genuine Apple accessories, high-grade screen protection, premium MagSafe cases, and power adapters to perfectly complement and protect your device.',
     image: 'https://images.unsplash.com/photo-1556656793-08538906a9f8?q=80&w=1200&auto=format&fit=crop'
   }
 ];
@@ -67,10 +67,10 @@ export default function Page() {
             <div className="bg-white p-8 lg:p-16 shadow-2xl border border-gray-100">
               <span className="text-[#B89D58] text-sm uppercase font-bold tracking-widest mb-4 block">Our Offering</span>
               <h2 className="text-4xl md:text-5xl font-playfair leading-tight mb-8">
-                iPhones only — sold, rented, and supported with care.
+                iPhones & Genuine Accessories — sold and supported with care.
               </h2>
               <p className="text-xl text-gray-500 font-light leading-relaxed">
-                Nick Phones specializes exclusively in Apple iPhones. From the latest Pro Max models to certified pre-owned devices, we source, inspect, and configure every handset before it reaches you — with setup help, genuine accessories, trade-in options, and after-sales support built in.
+                Nick Phones specializes exclusively in Apple iPhones and genuine accessories. From the latest Pro Max models to certified pre-owned devices, we source, inspect, and configure every handset before it reaches you — with setup help, premium Apple accessories, and dedicated after-sales support built in.
               </p>
             </div>
           </FadeIn>
@@ -90,8 +90,8 @@ export default function Page() {
         <div className="mb-32">
           <FadeIn>
             <div className="text-center mb-20">
-              <span className="text-gray-400 text-sm tracking-widest uppercase font-semibold block mb-4">iPhone Lineup</span>
-              <h2 className="text-4xl md:text-5xl font-playfair mb-6">For Sale & Rent</h2>
+              <span className="text-gray-400 text-sm tracking-widest uppercase font-semibold block mb-4">iPhone & Accessories</span>
+              <h2 className="text-4xl md:text-5xl font-playfair mb-6">Sales & Custom Setups</h2>
               <div className="w-12 h-[1px] bg-[#B89D58] mx-auto"></div>
             </div>
           </FadeIn>
@@ -137,10 +137,10 @@ export default function Page() {
               <div className="absolute inset-0 bg-noise mix-blend-overlay opacity-20"></div>
             </div>
             <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
-              <span className="text-[#B89D58] text-sm uppercase font-bold tracking-widest mb-6 block">Trade-In & Support</span>
-              <h3 className="text-4xl md:text-5xl font-playfair mb-8">Upgrade to your next iPhone.</h3>
+              <span className="text-[#B89D58] text-sm uppercase font-bold tracking-widest mb-6 block">Sales & Support</span>
+              <h3 className="text-4xl md:text-5xl font-playfair mb-8">Get the perfect iPhone setup.</h3>
               <p className="text-white/70 leading-relaxed mb-12 text-lg font-light">
-                Bring in your current iPhone for a fair trade-in value, browse our latest stock, or ask about rental and bulk orders for teams. We handle every step — from data transfer to accessory pairing.
+                Browse our latest stock of iPhones and premium Apple accessories, or enquire about custom setups. We handle every step — from data transfer to screen protector application and accessory pairing.
               </p>
               <Link href="/contact" className="inline-flex items-center gap-2 border border-white hover:bg-white hover:text-gray-900 transition-colors text-white text-[13px] font-semibold tracking-wider uppercase px-10 py-5">
                 Contact Sales <span className="text-lg leading-none">&rarr;</span>

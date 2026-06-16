@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowLeftIcon, ArrowRightIcon, ArrowDownIcon } from 'lucide-react';
+import { ArrowLeftIcon, ArrowDownIcon } from 'lucide-react';
 import FadeIn from "@/components/FadeIn";
 
 const categories = [
@@ -36,7 +36,7 @@ export default function Page() {
       {/* Hero Section */}
       <div className="relative w-full h-[60vh] sm:h-[80vh] min-h-[320px] sm:min-h-[500px] overflow-hidden group">
         <Image
-          src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2000&auto=format&fit=crop"
+          src="/images/collection/collection-hero.png"
           alt="Happy Boy Collection"
           fill
           className="object-cover scale-105 duration-[20000ms] ease-out group-hover:scale-125 pointer-events-none select-none"
@@ -90,7 +90,7 @@ export default function Page() {
           </FadeIn>
           <FadeIn delay={400} className="relative h-[320px] md:h-[600px] w-full lg:w-3/5 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=1200&auto=format&fit=crop"
+              src="/images/collection/collection-hero1.png"
               fill
               className="object-cover pointer-events-none select-none"
               alt="Fashion Philosophy"
@@ -114,7 +114,7 @@ export default function Page() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {categories.map((cat, idx) => (
               <FadeIn key={cat.title} delay={idx * 150}>
-                <Link href={`/collection/${cat.slug}`} className="group relative block h-[320px] md:h-[450px] overflow-hidden cursor-pointer">
+                <div className="group relative block h-[320px] md:h-[450px] overflow-hidden">
                   <Image
                     src={cat.img}
                     alt={cat.title}
@@ -129,12 +129,8 @@ export default function Page() {
                     <p className="text-white/80 font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                       {cat.desc}
                     </p>
-                    {/* Hover Arrow Overlay */}
-                    <div className="flex items-center gap-2 mt-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-200 text-[#B89D58] uppercase tracking-widest text-sm font-semibold">
-                      Explore Collection <ArrowRightIcon className="w-4 h-4" />
-                    </div>
                   </div>
-                </Link>
+                </div>
               </FadeIn>
             ))}
           </div>

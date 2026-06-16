@@ -27,7 +27,7 @@ export default function MarqueePortfolio({ businesses }: { businesses: Business[
                 <p className="text-gray-500 font-light max-w-xl mb-6">
                     Explore our diverse range of operating companies driving growth globally. Swipe on mobile or let it glide on larger screens.
                 </p>
-                <Link href="/about" className="text-[11px] uppercase tracking-[0.2em] font-bold pb-1 border-b border-gray-900 hover:text-gray-500 transition-colors">
+                <Link href="" className="text-[11px] uppercase tracking-[0.2em] font-bold pb-1 border-b border-gray-900 hover:text-gray-500 transition-colors">
                     View All Subsidiaries
                 </Link>
             </div>
