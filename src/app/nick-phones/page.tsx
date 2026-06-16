@@ -8,13 +8,13 @@ const lineup = [
     name: 'iPhone Sales',
     category: 'Pro Max · Pro · Standard',
     copy: 'New and certified pre-owned iPhones across every series — from the latest Pro Max to everyday models. Each device is meticulously inspected, certified, and ready for immediate purchase.',
-    image: 'https://images.unsplash.com/photo-1695048133142-1c2042a5f962?q=80&w=1200&auto=format&fit=crop'
+    image: '/images/nick-phones/iphone_product_card.png'
   },
   {
     name: 'Apple Accessories',
     category: 'Cases · Chargers · Audio',
     copy: 'Genuine Apple accessories, high-grade screen protection, premium MagSafe cases, and power adapters to perfectly complement and protect your device.',
-    image: 'https://images.unsplash.com/photo-1556656793-08538906a9f8?q=80&w=1200&auto=format&fit=crop'
+    image: '/images/nick-phones/apple_accessories_product_card.png'
   }
 ];
 
@@ -23,7 +23,7 @@ export default function Page() {
     <div className="flex flex-col w-full min-h-screen bg-white text-gray-900 pb-32">
       <div className="relative w-full h-[60vh] sm:h-[80vh] min-h-[320px] sm:min-h-[500px] overflow-hidden group">
         <Image
-          src="https://images.unsplash.com/photo-1695048133142-1c2042a5f962?q=80&w=2000&auto=format&fit=crop"
+          src="/images/nick-phones/apple_accessories_hero.png"
           alt="Nick Phones — iPhone specialist"
           fill
           className="object-cover scale-105 duration-[20000ms] ease-out group-hover:scale-125 pointer-events-none select-none"
@@ -76,7 +76,7 @@ export default function Page() {
           </FadeIn>
           <FadeIn delay={400} className="relative h-[320px] md:h-[500px] lg:h-[700px] w-full lg:w-3/5 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1632661671362-ef48f872f34d?q=80&w=1200&auto=format&fit=crop"
+              src="/images/nick-phones/iphone_collection_hero.png"
               fill
               className="object-cover pointer-events-none select-none"
               alt="iPhone collection"
@@ -99,7 +99,7 @@ export default function Page() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {lineup.map((phone, idx) => (
               <FadeIn key={idx} delay={idx * 150} className="group">
-                <div className="relative h-[280px] md:h-[400px] w-full overflow-hidden mb-6 bg-gray-100">
+                <div className="relative h-[280px] md:h-[400px] w-full overflow-hidden mb-5 bg-gray-100">
                   <Image
                     src={phone.image}
                     alt={phone.name}
@@ -108,7 +108,7 @@ export default function Page() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 600px"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
+                  <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors duration-500 pointer-events-none" />
                 </div>
 
                 <div>
@@ -129,7 +129,7 @@ export default function Page() {
           <div className="relative py-32 px-8 text-center bg-gray-900 text-white overflow-hidden">
             <div className="absolute inset-0 z-0">
               <Image
-                src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=2000&auto=format&fit=crop"
+                src="/images/nick-phones/apple_accessories_hero.png"
                 fill
                 className="object-cover opacity-10"
                 alt="Nick Phones background"

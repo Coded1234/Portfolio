@@ -2,23 +2,26 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeftIcon, ArrowDownIcon } from 'lucide-react';
 import FadeIn from "@/components/FadeIn";
+import LazyVideo from "@/components/LazyVideo";
 
 type Operation =
-  | { name: string; type: string; desc: string; image: string; video?: never }
-  | { name: string; type: string; desc: string; video: string; image?: never };
+  | { name: string; type: string; desc: string; image: string; video?: never; poster?: never }
+  | { name: string; type: string; desc: string; video: string; poster?: string; image?: never };
 
 const operations: Operation[] = [
   {
     name: "Heritage Swine",
     type: "Ethical Livestock",
     desc: "Raising elite pig bloodlines with extensive veterinary care and specialized organic feed to ensure unmatched meat quality.",
-    video: "/images/farms/pigs-video.mp4"
+    video: "/images/farms/pigs-video.mp4",
+    poster: "/images/farms/pigs.jpg"
   },
   {
     name: "Free-Range Poultry",
     type: "Organic Farming",
     desc: "Expansive free-range environments designed to deliver the healthiest, ethically raised poultry to premium markets.",
-    video: "/images/farms/poultry-vid.mp4"
+    video: "/images/farms/poultry-vid.mp4",
+    poster: "/images/farms/poultry.png"
   },
   {
     name: "Premium Pigs",
@@ -30,7 +33,8 @@ const operations: Operation[] = [
     name: "Poultry Eggs",
     type: "Fresh Farm Eggs",
     desc: "Nutritious, farm-fresh eggs from our free-range poultry — collected daily and handled with care for households, retailers, and partners.",
-    video: "/images/farms/poultry-eggs.mp4"
+    video: "/images/farms/poultry-eggs.mp4",
+    poster: "/images/farms/poultry.png"
   }
 ];
 
@@ -86,7 +90,7 @@ export default function Page() {
             <div className="bg-white p-8 lg:p-16 shadow-2xl border border-gray-100">
               <div className="relative w-full max-w-[280px] h-32 mx-auto lg:mx-0 mb-8">
                 <Image
-                  src="/images/farms/farms-logo .jpg"
+                  src="/images/farms/farm-logo.jpg"
                   alt="Happy Boy Farms logo"
                   fill
                   className="object-contain object-left"
@@ -131,13 +135,10 @@ export default function Page() {
               <FadeIn key={idx} delay={idx * 150} className="group cursor-pointer">
                 <div className="relative h-[280px] md:h-[400px] w-full overflow-hidden mb-6 bg-gray-100">
                   {"video" in op ? (
-                    <video
+                    <LazyVideo
                       src={op.video}
+                      poster={op.poster}
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
                     />
                   ) : (
                     <Image

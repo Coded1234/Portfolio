@@ -7,42 +7,42 @@ const businesses = [
     description: "Curated fashion and luxury goods emphasizing timeless style and modern elegance.",
     href: "/collection",
     tag: "Retail & Fashion",
-    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800&auto=format&fit=crop"
+    image: "/images/collection/collection-hero.png"
   },
   {
     title: "Happy Boy Farms",
     description: "Sustainable agriculture delivering high-quality organic produce and livestock globally.",
     href: "/farms",
     tag: "Agriculture",
-    image: "/images/farms/pigs.jpg"
+    image: "/images/farms/farm hero.png"
   },
   {
     title: "Happy Boy Homes",
     description: "Premium real estate development focused on beautifully crafted living spaces.",
     href: "/homes",
     tag: "Real Estate",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop"
+    image: "/images/homes/homes-hero.jpg"
   },
   {
     title: "Nick Phones",
     description: "Your trusted iPhone specialist — new, pre-owned, and rental iPhones with full support.",
     href: "/nick-phones",
     tag: "Electronics",
-    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800&auto=format&fit=crop"
+    image: "/images/nick-phones/apple_accessories_hero.png"
   },
   {
     title: "Happy Boy Automobile",
     description: "Luxury and commercial vehicle distribution, sales, and comprehensive servicing.",
     href: "/automobile",
     tag: "Transport",
-    image: "https://images.unsplash.com/photo-1503376710356-70e68c85f4ba?q=80&w=800&auto=format&fit=crop"
+    image: "/images/automobile/hero.png"
   },
   {
     title: "HB Oil and Gas",
     description: "Robust energy solutions prioritizing efficiency, reliability, and security of supply.",
     href: "/oil-and-gas",
     tag: "Energy",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop",
+    image: "/images/oil-and-gas/oil_gas_hero_refinery.png",
     comingSoon: true
   },
   {
@@ -50,7 +50,7 @@ const businesses = [
     description: "Responsible extraction and processing of valuable raw minerals and resources.",
     href: "/mining",
     tag: "Resources",
-    image: "https://images.unsplash.com/photo-1582214488219-c0ae2f1ab8cf?q=80&w=800&auto=format&fit=crop"
+    image: "/images/mining/gold_mine_hero.png"
   }
 ];
 

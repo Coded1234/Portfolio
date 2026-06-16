@@ -9,7 +9,7 @@ export default function Page() {
       {/* Hero Section */}
       <div className="relative w-full h-[60vh] sm:h-[80vh] min-h-[320px] sm:min-h-[500px] overflow-hidden group">
         <Image
-          src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000&auto=format&fit=crop"
+          src="/images/oil-and-gas/oil_gas_hero_refinery.png"
           alt="HB Oil and Gas"
           fill
           className="object-cover scale-105 duration-[20000ms] ease-out group-hover:scale-125 pointer-events-none select-none"

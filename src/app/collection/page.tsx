@@ -14,7 +14,7 @@ const categories = [
     title: "Sneakers & Footwear",
     slug: "sneakers",
     desc: "Luxury athletic silhouettes crafted with premium Italian leathers.",
-    img: "https://images.unsplash.com/photo-1595950653106-6c9ebd614c3a?q=80&w=1200&auto=format&fit=crop",
+    img: "/images/collection/brand_sneakers_lifestyle.png",
   },
   {
     title: "Luxury Timepieces",
@@ -26,7 +26,7 @@ const categories = [
     title: "Fine Jewelry",
     slug: "jewelry",
     desc: "Bespoke diamond and gold jewelry designed to last generations.",
-    img: "https://images.unsplash.com/photo-1599643477874-dc81cbd21966?q=80&w=1200&auto=format&fit=crop",
+    img: "/images/collection/fine_jewelry_product_card.png",
   }
 ];
 

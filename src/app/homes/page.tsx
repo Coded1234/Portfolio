@@ -2,10 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowDownIcon, MapPinIcon, ArrowLeftIcon } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
+import LazyVideo from "@/components/LazyVideo";
 
 type Project =
-  | { name: string; location: string; status: string; desc: string; image: string; video?: never }
-  | { name: string; location: string; status: string; desc: string; video: string; image?: never };
+  | { name: string; location: string; status: string; desc: string; image: string; video?: never; poster?: never }
+  | { name: string; location: string; status: string; desc: string; video: string; poster?: string; image?: never };
 
 const projects: Project[] = [
   {
@@ -34,7 +35,8 @@ const projects: Project[] = [
     location: "Accra, Ghana",
     status: "Ongoing",
     desc: "An active build site combining residential and commercial spaces, with foundations and framing advancing across the project.",
-    video: "/images/homes/building-video.mp4"
+    video: "/images/homes/building-video.mp4",
+    poster: "/images/homes/building-3.jpg"
   }
 ];
 
@@ -44,7 +46,7 @@ export default function Page() {
       {/* Hero Section */}
       <div className="relative w-full h-[60vh] sm:h-[80vh] min-h-[320px] sm:min-h-[500px] overflow-hidden group">
         <Image
-          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2000&auto=format&fit=crop"
+          src="/images/homes/homes-hero.jpg"
           alt="Happy Boy Homes"
           fill
           className="object-cover scale-105 duration-[20000ms] ease-out group-hover:scale-125 pointer-events-none select-none"
@@ -127,13 +129,10 @@ export default function Page() {
               <FadeIn key={idx} delay={idx * 150} className="group">
                 <div className="relative h-[280px] md:h-[450px] w-full overflow-hidden mb-6 bg-gray-100">
                   {"video" in project ? (
-                    <video
+                    <LazyVideo
                       src={project.video}
+                      poster={project.poster}
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
                     />
                   ) : (
                     <Image
