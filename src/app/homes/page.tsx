@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowDownIcon, MapPinIcon, ArrowLeftIcon } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
+import LazyVideo from "@/components/LazyVideo";
 
 type Project =
   | { name: string; location: string; status: string; desc: string; image: string; video?: never }
@@ -127,13 +128,9 @@ export default function Page() {
               <FadeIn key={idx} delay={idx * 150} className="group">
                 <div className="relative h-[280px] md:h-[450px] w-full overflow-hidden mb-6 bg-gray-100">
                   {"video" in project ? (
-                    <video
-                      src={project.video}
+                    <LazyVideo
+                      src={project.video!}
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
                     />
                   ) : (
                     <Image

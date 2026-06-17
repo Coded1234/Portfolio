@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeftIcon, ArrowDownIcon } from 'lucide-react';
 import FadeIn from "@/components/FadeIn";
+import LazyVideo from "@/components/LazyVideo";
 
 type Operation =
   | { name: string; type: string; desc: string; image: string; video?: never }
@@ -122,13 +123,9 @@ export default function Page() {
               <FadeIn key={idx} delay={idx * 150} className="group">
                 <div className="relative h-[280px] md:h-[400px] w-full overflow-hidden mb-6 bg-gray-100">
                   {"video" in op ? (
-                    <video
-                      src={op.video}
+                    <LazyVideo
+                      src={op.video!}
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
                     />
                   ) : (
                     <Image
@@ -161,13 +158,11 @@ export default function Page() {
         <FadeIn delay={200}>
           <div className="relative py-32 px-8 text-center bg-gray-900 text-white overflow-hidden">
             <div className="absolute inset-0 z-0">
-              <video
+              <Image
                 src="/images/mining/gold_bars_vault.png"
-                className="absolute inset-0 h-full w-full object-cover opacity-10"
-                autoPlay
-                muted
-                loop
-                playsInline
+                fill
+                className="object-cover opacity-10"
+                alt="Gold bars background"
               />
               <div className="absolute inset-0 bg-noise mix-blend-overlay opacity-20"></div>
             </div>

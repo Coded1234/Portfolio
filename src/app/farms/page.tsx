@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeftIcon, ArrowDownIcon } from 'lucide-react';
 import FadeIn from "@/components/FadeIn";
+import LazyVideo from "@/components/LazyVideo";
 
 type Operation =
   | { name: string; type: string; desc: string; image: string; video?: never }
@@ -86,7 +87,7 @@ export default function Page() {
             <div className="bg-white p-8 lg:p-16 shadow-2xl border border-gray-100">
               <div className="relative w-full max-w-[280px] h-32 mx-auto lg:mx-0 mb-8">
                 <Image
-                  src="/images/farms/farms-logo .jpg"
+                  src="/images/farms/farm-logo.jpg"
                   alt="Happy Boy Farms logo"
                   fill
                   className="object-contain object-left"
@@ -131,13 +132,9 @@ export default function Page() {
               <FadeIn key={idx} delay={idx * 150} className="group cursor-pointer">
                 <div className="relative h-[280px] md:h-[400px] w-full overflow-hidden mb-6 bg-gray-100">
                   {"video" in op ? (
-                    <video
-                      src={op.video}
+                    <LazyVideo
+                      src={op.video!}
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
                     />
                   ) : (
                     <Image
