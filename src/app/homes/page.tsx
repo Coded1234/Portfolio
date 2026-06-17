@@ -2,11 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowDownIcon, MapPinIcon, ArrowLeftIcon } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
-import LazyVideo from "@/components/LazyVideo";
 
 type Project =
-  | { name: string; location: string; status: string; desc: string; image: string; video?: never; poster?: never }
-  | { name: string; location: string; status: string; desc: string; video: string; poster?: string; image?: never };
+  | { name: string; location: string; status: string; desc: string; image: string; video?: never }
+  | { name: string; location: string; status: string; desc: string; video: string; image?: never };
 
 const projects: Project[] = [
   {
@@ -35,8 +34,7 @@ const projects: Project[] = [
     location: "Accra, Ghana",
     status: "Ongoing",
     desc: "An active build site combining residential and commercial spaces, with foundations and framing advancing across the project.",
-    video: "/images/homes/building-video.mp4",
-    poster: "/images/homes/building-3.jpg"
+    video: "/images/homes/building-video.mp4"
   }
 ];
 
@@ -129,10 +127,13 @@ export default function Page() {
               <FadeIn key={idx} delay={idx * 150} className="group">
                 <div className="relative h-[280px] md:h-[450px] w-full overflow-hidden mb-6 bg-gray-100">
                   {"video" in project ? (
-                    <LazyVideo
+                    <video
                       src={project.video}
-                      poster={project.poster}
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
                     />
                   ) : (
                     <Image

@@ -2,11 +2,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeftIcon, ArrowDownIcon } from 'lucide-react';
 import FadeIn from "@/components/FadeIn";
-import LazyVideo from "@/components/LazyVideo";
 
 type Operation =
-  | { name: string; type: string; desc: string; image: string; video?: never; poster?: never }
-  | { name: string; type: string; desc: string; video: string; poster?: string; image?: never };
+  | { name: string; type: string; desc: string; image: string; video?: never }
+  | { name: string; type: string; desc: string; video: string; image?: never };
 
 const operations: Operation[] = [
   {
@@ -19,15 +18,13 @@ const operations: Operation[] = [
     name: "Gold Processing & Refinement",
     type: "Ore to Bullion",
     desc: "Raw ore is crushed, milled, and refined on site to recover pure gold — turning extracted material into market-ready bullion through careful processing and quality assurance.",
-    video: "/images/mining/gold.mp4",
-    poster: "/images/mining/gold_bars_vault.png"
+    video: "/images/mining/gold.mp4"
   },
   {
     name: "Site Operations",
     type: "Production Management",
     desc: "Coordinated shift planning, equipment maintenance, and environmental monitoring keep our mining sites productive, compliant, and operating to the highest safety standards.",
-    video: "/images/mining/underground-mining.mp4",
-    poster: "/images/mining/underground_mining_tunnel.png"
+    video: "/images/mining/underground-mining.mp4"
   },
   {
     name: "Secure Logistics",
@@ -125,10 +122,13 @@ export default function Page() {
               <FadeIn key={idx} delay={idx * 150} className="group">
                 <div className="relative h-[280px] md:h-[400px] w-full overflow-hidden mb-6 bg-gray-100">
                   {"video" in op ? (
-                    <LazyVideo
+                    <video
                       src={op.video}
-                      poster={op.poster}
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
                     />
                   ) : (
                     <Image
@@ -161,12 +161,13 @@ export default function Page() {
         <FadeIn delay={200}>
           <div className="relative py-32 px-8 text-center bg-gray-900 text-white overflow-hidden">
             <div className="absolute inset-0 z-0">
-              <Image
+              <video
                 src="/images/mining/gold_bars_vault.png"
-                alt="Gold Bars Vault"
-                fill
-                className="object-cover opacity-10"
-                sizes="100vw"
+                className="absolute inset-0 h-full w-full object-cover opacity-10"
+                autoPlay
+                muted
+                loop
+                playsInline
               />
               <div className="absolute inset-0 bg-noise mix-blend-overlay opacity-20"></div>
             </div>

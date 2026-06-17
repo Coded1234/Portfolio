@@ -42,7 +42,7 @@ const businesses = [
     description: "Robust energy solutions prioritizing efficiency, reliability, and security of supply.",
     href: "/oil-and-gas",
     tag: "Energy",
-    image: "/images/oil-and-gas/oil_gas_hero_refinery.png",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000&auto=format&fit=crop",
     comingSoon: true
   },
   {
