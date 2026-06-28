@@ -2,18 +2,15 @@ import React from 'react';
 
 export const TikTokIcon = ({ className, size = 24 }: { className?: string; size?: number }) => (
     <svg
-        viewBox="0 0 50 50"
+        viewBox="0 0 24 24"
         width={size}
         height={size}
         className={className}
         fill="currentColor"
         aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
     >
-        {/* Rounded square background */}
-        <rect x="4" y="4" width="42" height="42" rx="8" ry="8" fill="none" />
-
-        {/* Musical-note-like glyph inspired by the TikTok mark */}
-        <path d="M32.5 12.5v9.6c-1.1-.2-2.2-.3-3.3-.3-3.8 0-7.3 2.1-9.1 5.5-1.9 3.5-1.6 7.7.7 10.7 2.3 3 6.1 4.8 9.9 4.8 4.8 0 9.1-3 11-7.5V27c-1.5 1-3.3 1.6-5.1 1.6-2.6 0-5.1-1-6.9-2.8-2-2-2.7-4.9-1.9-7.6 0 0 .1-.3.1-.4l7.6-1.8V12.5h0z" />
+        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
     </svg>
 );
 
