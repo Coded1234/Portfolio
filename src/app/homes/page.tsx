@@ -101,7 +101,7 @@ export default function Page() {
           </FadeIn>
           <FadeIn delay={400} className="relative h-[320px] md:h-[500px] lg:h-[700px] w-full lg:w-3/5 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop"
+              src="/images/homes/homes-hero.jpg"
               fill
               className="object-cover pointer-events-none select-none"
               alt="Architectural Excellence"

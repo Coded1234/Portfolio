@@ -29,7 +29,7 @@ export default function Footer() {
                 </svg>
               </a>
 
-              <a aria-label="Facebook" href="https://www.facebook.com/share/1Aed53zj5E/" target="_blank" rel="noreferrer" className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gray-900 text-white inline-flex items-center justify-center hover:bg-gray-800">
+              <a aria-label="Facebook" href="https://www.facebook.com/nicksonmanase" target="_blank" rel="noreferrer" className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gray-900 text-white inline-flex items-center justify-center hover:bg-gray-800">
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                   <path d="M18 2h-3a4 4 0 00-4 4v3H8v3h3v7h3v-7h2.5l.5-3H14V6a1 1 0 011-1h3z" />
                 </svg>
