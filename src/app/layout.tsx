@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display, Caveat } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { siteUrl } from "@/lib/site";
 import "react-international-phone/style.css";
 import "./globals.css";
 
@@ -26,6 +27,7 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Happy Boy Company Limited",
   description: "A premier diversified corporation based in Accra, Ghana — spanning fashion, agriculture, real estate, electronics, automobile, energy, and mining.",
 };
