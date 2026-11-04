@@ -23,6 +23,8 @@ export default function BusinessCard({ title, description, href, tag, image }: B
               alt={title}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              loading="lazy"
             />
             {/* Subtle dark overlay so white text remains readable over the image */}
             <div className="absolute inset-0 bg-black/50 md:bg-black/40" />

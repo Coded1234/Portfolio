@@ -145,6 +145,8 @@ export default function Page() {
                 fill
                 className="object-cover grayscale"
                 alt="Boutique background"
+                loading="lazy"
+                sizes="100vw"
               />
             </div>
             <div className="relative z-10 max-w-2xl mx-auto">

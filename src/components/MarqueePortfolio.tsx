@@ -47,6 +47,7 @@ export default function MarqueePortfolio({ businesses }: { businesses: Business[
                                     fill
                                     className="object-cover mix-blend-multiply opacity-90"
                                     sizes="82vw"
+                                    loading="lazy"
                                 />
                             </div>
 
@@ -85,6 +86,7 @@ export default function MarqueePortfolio({ businesses }: { businesses: Business[
                                     fill
                                     className="object-cover mix-blend-multiply opacity-90 transition-transform duration-700 group-hover/card:scale-105"
                                     sizes="(max-width: 768px) 80vw, 400px"
+                                    loading="lazy"
                                 />
                             </div>
 
