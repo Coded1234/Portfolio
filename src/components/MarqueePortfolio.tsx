@@ -21,13 +21,14 @@ export default function MarqueePortfolio({ businesses }: { businesses: Business[
     const [paused, setPaused] = useState(false);
 
     return (
-        <section id="portfolio" className="border-t border-gray-100 bg-white py-16 overflow-hidden">
+        <section id="portfolio" className="border-t border-slate-200 bg-white py-20 overflow-hidden">
             <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 flex flex-col items-center text-center">
-                <h2 className="text-3xl sm:text-4xl font-playfair tracking-tight mb-4 text-gray-900">Our Portfolio</h2>
+                <span className="eyebrow mb-4">A diversified platform</span>
+                <h2 className="text-3xl sm:text-4xl font-playfair tracking-tight mb-4 text-[#122033]">Our Portfolio</h2>
                 <p className="text-gray-500 font-light max-w-xl mb-6">
                     Explore our diverse range of operating companies driving growth globally. Swipe on mobile or let it glide on larger screens.
                 </p>
-                <Link href="" className="text-[11px] uppercase tracking-[0.2em] font-bold pb-1 border-b border-gray-900 hover:text-gray-500 transition-colors">
+                <Link href="#portfolio" className="text-[11px] uppercase tracking-[0.2em] font-bold pb-1 border-b border-indigo-500 text-indigo-600 hover:text-indigo-800 transition-colors">
                     View All Subsidiaries
                 </Link>
             </div>
@@ -40,7 +41,7 @@ export default function MarqueePortfolio({ businesses }: { businesses: Business[
                             href={business.href}
                             className="flex-shrink-0 w-[82vw] max-w-[320px] snap-start flex flex-col group/card"
                         >
-                            <div className="relative w-full aspect-[4/3] rounded-2xl bg-[#f9f9f9] overflow-hidden border border-gray-100">
+                            <div className="relative w-full aspect-[4/3] rounded-2xl bg-slate-100 overflow-hidden border border-slate-200">
                                 <Image
                                     src={business.image}
                                     alt={business.title}
@@ -79,7 +80,7 @@ export default function MarqueePortfolio({ businesses }: { businesses: Business[
                             className="flex-shrink-0 w-[80vw] sm:w-[50vw] md:w-[400px] mx-2 flex flex-col group/card"
                         >
                             {/* Image Section - mimicking the light gray background in your reference */}
-                            <div className="relative w-full aspect-[4/3] bg-[#f9f9f9] overflow-hidden">
+                            <div className="relative w-full aspect-[4/3] rounded-2xl bg-slate-100 overflow-hidden border border-slate-200">
                                 <Image
                                     src={business.image}
                                     alt={business.title}
