@@ -163,6 +163,8 @@ export default function Page() {
                 fill
                 className="object-cover opacity-10"
                 alt="Gold bars background"
+                loading="lazy"
+                sizes="100vw"
               />
               <div className="absolute inset-0 bg-noise mix-blend-overlay opacity-20"></div>
             </div>

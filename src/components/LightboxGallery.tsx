@@ -34,6 +34,8 @@ export default function LightboxGallery({ gallery, title }: { gallery: string[],
                             alt={`${title} Preview ${idx + 1}`}
                             fill
                             className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                            loading="lazy"
                         />
                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 z-10" />
 
