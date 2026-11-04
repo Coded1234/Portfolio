@@ -1,9 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  /* font variables are provided by theme / tailwind config or next/font */
+  --background: #f7f9fc;
+  --foreground: #122033;
+  --surface: #ffffff;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --navy: #122033;
+  --indigo: #5167d8;
+  --gold: #b89d58;
+  --font-geist-sans: "Inter", "Segoe UI", Arial, sans-serif;
+  --font-geist-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --font-playfair: Georgia, "Times New Roman", serif;
+  --font-caveat: "Comic Sans MS", cursive;
 }
 
 @theme inline {
@@ -50,7 +59,66 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Keep specialty font utility classes untouched so components can opt-in to them */
+::selection {
+  background: #c7d2fe;
+  color: #172554;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #a5b4fc;
+  outline-offset: 3px;
+}
+
+.page-shell {
+  background:
+    radial-gradient(circle at 8% 0%, rgba(81, 103, 216, 0.06), transparent 28rem),
+    var(--background);
+}
+
+.eyebrow {
+  color: var(--indigo);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.enterprise-card {
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 1.25rem;
+  background: var(--surface);
+  box-shadow: 0 16px 45px rgba(15, 23, 42, 0.06);
+}
+
+.enterprise-button {
+  border-radius: 999px;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.enterprise-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.14);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 
 /* Toast slide-up animation */
 @keyframes slide-up {

@@ -45,32 +45,32 @@ export default function Navbar() {
   }, [isMobileMenuOpen]);
 
   return (
-    <nav ref={navRef} className="fixed top-3 left-1/2 -translate-x-1/2 w-[calc(100%-1rem)] max-w-6xl z-[200] isolate rounded-2xl md:rounded-full border border-gray-200 bg-white/80 md:bg-white/60 backdrop-blur-lg shadow-sm pointer-events-auto">
+    <nav ref={navRef} className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-1.25rem)] max-w-6xl z-[200] isolate rounded-2xl md:rounded-full border border-white/60 bg-white/80 md:bg-white/75 backdrop-blur-xl shadow-[0_12px_40px_rgba(15,23,42,0.10)] pointer-events-auto">
       <div className="px-4 sm:px-6 py-3 md:py-3">
         <div className="flex items-center gap-3 min-h-10 md:grid md:min-h-10 md:grid-cols-[1fr_auto_1fr] md:items-center">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-2 min-w-0 md:justify-self-start">
-            <div className="w-8 h-8 flex items-center justify-center rounded-md text-foreground">
+            <div className="w-9 h-9 flex items-center justify-center rounded-xl bg-[#122033] text-white shadow-sm">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" /></svg>
             </div>
-            <Link href="/" className="text-sm sm:text-lg font-bold tracking-widest uppercase truncate">
+            <Link href="/" className="text-sm sm:text-base font-bold tracking-[0.18em] text-[#122033] uppercase truncate">
               HAPPY BOY
             </Link>
           </div>
 
           {/* Centered Links */}
           <div className="hidden md:flex md:justify-self-center items-center space-x-2">
-            <Link href="/" className={`text-sm font-medium px-4 py-1.5 rounded-full transition-colors ${pathname === '/' ? 'bg-white shadow-sm text-black' : 'text-gray-600 hover:text-black hover:bg-white/50'}`}>
+            <Link href="/" className={`text-sm font-medium px-4 py-2 rounded-full transition-all ${pathname === '/' ? 'bg-[#122033] text-white shadow-sm' : 'text-slate-600 hover:text-[#122033] hover:bg-slate-100/80'}`}>
               Home
             </Link>
 
-            <Link href="/about" className={`text-sm font-medium px-4 py-1.5 rounded-full transition-colors ${pathname === '/about' ? 'bg-white shadow-sm text-black' : 'text-gray-600 hover:text-black hover:bg-white/50'}`}>
+            <Link href="/about" className={`text-sm font-medium px-4 py-2 rounded-full transition-all ${pathname === '/about' ? 'bg-[#122033] text-white shadow-sm' : 'text-slate-600 hover:text-[#122033] hover:bg-slate-100/80'}`}>
               About
             </Link>
 
             {/* Businesses Dropdown Wrapper */}
             <div className="relative group">
-              <Link href="/#portfolio" className={`flex items-center text-sm font-medium px-4 py-1.5 rounded-full transition-colors ${isBusinessPage ? 'bg-white shadow-sm text-black' : 'text-gray-600 hover:text-black hover:bg-white/50'}`}>
+              <Link href="/#portfolio" className={`flex items-center text-sm font-medium px-4 py-2 rounded-full transition-all ${isBusinessPage ? 'bg-[#122033] text-white shadow-sm' : 'text-slate-600 hover:text-[#122033] hover:bg-slate-100/80'}`}>
                 Businesses
                 <svg className="w-4 h-4 ml-1 opacity-70 group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
               </Link>
@@ -79,8 +79,8 @@ export default function Navbar() {
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out">
                 {/* Invisible hover bridge */}
                 <div className="absolute -top-4 left-0 w-full h-4 bg-transparent"></div>
-                <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8">
-                  <h4 className="text-xs font-bold tracking-wider text-gray-400 uppercase mb-6 ml-2">Our Businesses</h4>
+                <div className="bg-white/95 rounded-3xl shadow-2xl shadow-slate-900/10 border border-slate-200 p-8">
+                  <h4 className="text-xs font-bold tracking-wider text-indigo-500 uppercase mb-6 ml-2">Our Businesses</h4>
                   <div className="grid grid-cols-2 gap-x-8 gap-y-6">
                     {businesses.map((b) => (
                       <Link key={b.name} href={b.href} className="group/item flex flex-col items-start p-2 -m-2 rounded-xl hover:bg-gray-50 transition-colors">
@@ -93,7 +93,7 @@ export default function Navbar() {
               </div>
             </div>
 
-            <Link href="/contact" className={`text-sm font-medium px-4 py-1.5 rounded-full transition-colors ${pathname === '/contact' ? 'bg-white shadow-sm text-black' : 'text-gray-600 hover:text-black hover:bg-white/50'}`}>
+            <Link href="/contact" className={`text-sm font-medium px-4 py-2 rounded-full transition-all ${pathname === '/contact' ? 'bg-[#122033] text-white shadow-sm' : 'text-slate-600 hover:text-[#122033] hover:bg-slate-100/80'}`}>
               Contact
             </Link>
           </div>
