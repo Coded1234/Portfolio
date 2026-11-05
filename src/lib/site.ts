@@ -1,5 +1,5 @@
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-alpha-orpin-11.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.happyboy.website";
 
 export const sitePages = [
   { path: "/", title: "Happy Boy Company Limited", description: "A diversified corporation based in Accra, Ghana." },
