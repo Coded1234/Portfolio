@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { siteUrl } from "@/lib/site";
+import { Analytics } from "@vercel/analytics/next";
 import "react-international-phone/style.css";
 import "./globals.css";
 
@@ -29,6 +30,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-grow page-shell">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
