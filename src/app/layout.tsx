@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Happy Boy Company Limited",
   description: "A premier diversified corporation based in Accra, Ghana — spanning fashion, agriculture, real estate, electronics, automobile, energy, and mining.",
+  verification: {
+    google: "AhUasa7FCpzBMbROpeaEssIAySOfzWN1218CJ3NAvPo",
+  },
 };
 
 export default function RootLayout({
