@@ -72,16 +72,18 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-20">
 
-            {/* Owner Image Placeholder (photo will be inserted later) */}
             <FadeIn delay={100} className="w-full lg:w-5/12 flex justify-center">
               <div className="relative group">
                 {/* Offset gold border decoration */}
                 <div className="absolute inset-0 border-2 border-[#B89D58] translate-x-4 translate-y-4 sm:translate-x-6 sm:translate-y-6 z-0 transition-transform duration-500 group-hover:translate-x-4 group-hover:translate-y-4"></div>
                 <div className="relative w-[18rem] h-[24rem] sm:w-96 sm:h-[32rem] overflow-hidden shadow-lg z-10 bg-gray-200 flex items-center justify-center">
-                  <div className="text-center px-4">
-                    <div className="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4" />
-                    <p className="text-sm text-gray-600">Founder photo coming soon</p>
-                  </div>
+                  <Image
+                    src="/images/about/founder.jpg"
+                    alt="Nickson Manasseh, Founder and Chairman of Happy Boy Group"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 18rem, 24rem"
+                  />
                 </div>
               </div>
             </FadeIn>

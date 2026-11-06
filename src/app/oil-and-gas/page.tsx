@@ -25,7 +25,7 @@ export default function Page() {
                 HB Oil & Gas
               </h1>
               <p className="text-white/80 text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto uppercase">
-                Coming Soon
+                Fuel stations and reliable fuel supply
               </p>
             </FadeIn>
           </div>
@@ -51,11 +51,11 @@ export default function Page() {
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-[#B89D58] text-sm uppercase font-bold tracking-widest mb-4 block">Energy</span>
             <h2 className="text-4xl md:text-5xl font-playfair leading-tight mb-8">
-              Something exceptional is on the way.
+              Fueling movement with confidence.
             </h2>
             <div className="w-12 h-[1px] bg-[#B89D58] mx-auto mb-8"></div>
             <p className="text-xl text-gray-500 font-light leading-relaxed mb-12">
-              We are preparing robust energy solutions prioritizing efficiency, reliability, and security of supply. Check back soon for updates on HB Oil & Gas.
+              HB Oil & Gas is fully operational, providing dependable petrol and diesel through our fuel stations. We are committed to convenient service, consistent quality, and reliable supply for drivers and businesses.
             </p>
             <Link href="/contact" className="inline-flex items-center gap-2 border border-gray-900 hover:bg-gray-900 hover:text-white transition-colors text-gray-900 text-[13px] font-semibold tracking-wider uppercase px-10 py-5">
               Get In Touch <span className="text-lg leading-none">&rarr;</span>

@@ -9,7 +9,7 @@ export const sitePages = [
   { path: "/homes", title: "Happy Boy Homes", description: "Premium real estate development." },
   { path: "/nick-phones", title: "Nick Phones", description: "New, pre-owned, and rental iPhones." },
   { path: "/automobile", title: "Happy Boy Automobile", description: "Vehicle distribution, sales, and servicing." },
-  { path: "/oil-and-gas", title: "HB Oil and Gas", description: "Energy solutions and supply." },
+  { path: "/oil-and-gas", title: "HB Oil and Gas", description: "Operational petrol and diesel fuel stations." },
   { path: "/mining", title: "HB Mining", description: "Responsible mineral extraction and processing." },
   { path: "/contact", title: "Contact Happy Boy Company Limited", description: "Get in touch with Happy Boy Company Limited." },
 ] as const;
