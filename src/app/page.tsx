@@ -39,11 +39,10 @@ const businesses = [
   },
   {
     title: "HB Oil and Gas",
-    description: "Robust energy solutions prioritizing efficiency, reliability, and security of supply.",
+    description: "Operational fuel stations supplying reliable petrol and diesel for drivers and businesses.",
     href: "/oil-and-gas",
     tag: "Energy",
-    image: "/images/oil-and-gas/oil_gas_hero_refinery.png",
-    comingSoon: true
+    image: "/images/oil-and-gas/oil_gas_hero_refinery.png"
   },
   {
     title: "HB Mining",
