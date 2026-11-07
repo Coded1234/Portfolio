@@ -35,7 +35,7 @@ const businesses = [
     description: "Luxury and commercial vehicle distribution, sales, and comprehensive servicing.",
     href: "/automobile",
     tag: "Transport",
-    image: "/images/automobile/hero.png"
+    image: "/images/automobile/heros.png"
   },
   {
     title: "HB Oil and Gas",

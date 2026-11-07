@@ -8,25 +8,25 @@ const operations = [
     name: "Fuel Stations",
     type: "Retail Energy",
     desc: "Conveniently located stations supplying dependable petrol and diesel with clean facilities, efficient service, and a customer-first experience.",
-    image: "/images/oil-and-gas/oil_gas_hero_refinery.png",
+    image: "/images/oil-and-gas/fuelstation.png",
   },
   {
     name: "Bulk Fuel Supply",
     type: "Commercial Distribution",
     desc: "Reliable fuel delivery for businesses, fleets, and industrial partners, supported by responsive scheduling and consistent product quality.",
-    image: "https://images.unsplash.com/photo-1565610222536-ef125c59da2e?q=80&w=1400&auto=format&fit=crop",
+    image: "/images/oil-and-gas/fuel-tanker-unloading-at-station-ghana.png",
   },
   {
     name: "Storage & Handling",
     type: "Operational Reliability",
     desc: "Careful storage and handling practices help preserve fuel quality while keeping supply dependable across every stage of the distribution chain.",
-    image: "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=1400&auto=format&fit=crop",
+    image: "/images/oil-and-gas/fuel-storage-tanks.jpg",
   },
   {
     name: "Transport & Logistics",
     type: "Supply Network",
     desc: "Coordinated logistics keep fuel moving safely and efficiently from source to station, business, and community when it is needed most.",
-    image: "https://images.unsplash.com/photo-1586191582151-f73872dfd183?q=80&w=1400&auto=format&fit=crop",
+    image: "/images/oil-and-gas/fuel-transport-truck.jpg",
   },
 ];
 

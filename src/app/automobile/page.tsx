@@ -10,7 +10,7 @@ const fleet = [
     desc: "A versatile all-terrain SUV with rugged styling, all-wheel drive capability, and a spacious cabin — ideal for daily driving, family use, and weekend adventures.",
     image: "/images/automobile/car1.png"
   },
-  
+
   {
     model: "Toyota Highlander",
     type: "Mid-Size SUV",
@@ -37,7 +37,7 @@ export default function Page() {
       {/* Hero Section */}
       <div className="relative w-full h-[60vh] sm:h-[80vh] min-h-[320px] sm:min-h-[500px] overflow-hidden group">
         <Image
-          src="/images/automobile/hero.png"
+          src="/images/automobile/heros.png"
           alt="Happy Boy Automobile"
           fill
           className="object-cover scale-105 duration-[20000ms] ease-out group-hover:scale-125 pointer-events-none select-none"

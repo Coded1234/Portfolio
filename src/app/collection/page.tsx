@@ -8,13 +8,13 @@ const categories = [
     title: "Ready-to-Wear",
     slug: "ready-to-wear",
     desc: "Elevated everyday essentials and avant-garde statement pieces.",
-    img: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1200&auto=format&fit=crop",
+    img: "/images/collection/readytowear.jpeg",
   },
   {
     title: "Sneakers & Footwear",
     slug: "sneakers",
     desc: "Luxury athletic silhouettes crafted with premium Italian leathers.",
-    img: "/images/collection/brand_sneakers_lifestyle.png",
+    img: "/images/collection/sneakers.jpeg",
   },
   {
     title: "Luxury Timepieces",

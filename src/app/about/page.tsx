@@ -78,7 +78,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 border-2 border-[#B89D58] translate-x-4 translate-y-4 sm:translate-x-6 sm:translate-y-6 z-0 transition-transform duration-500 group-hover:translate-x-4 group-hover:translate-y-4"></div>
                 <div className="relative w-[18rem] h-[24rem] sm:w-96 sm:h-[32rem] overflow-hidden shadow-lg z-10 bg-gray-200 flex items-center justify-center">
                   <Image
-                    src="/images/about/founder.jpg"
+                    src="/images/about/founder.png"
                     alt="Nickson Manasseh, Founder and Chairman of Happy Boy Group"
                     fill
                     className="object-cover"
